@@ -12,6 +12,8 @@
 #import <Aspects/Aspects.h>
 #import "FlexContainerViewController.h"
 #import "FlexItemViewController.h"
+#import "NSString+ColorValue.h"
+#import "ExampleViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -23,7 +25,7 @@
 
 - (void)loadView {
     [super loadView];
-    _datas = @[[FlexContainerViewController new], [FlexItemViewController new]];
+    _datas = @[[FlexContainerViewController new], [FlexItemViewController new], [ExampleViewController new]];
     
     [self aspect_hookSelector:@selector(viewDidLoad) withOptions:(AspectPositionAfter) usingBlock:^{
         NSLog(@"AAA");
@@ -40,6 +42,9 @@
         [source registerReuseCellClass:[UITableViewCell class]];
     }] attachTo:self.view];
 
+    
+    showTableView.backgroundColor = @"#ff0000@1.0".color;
+    
     [NSLayoutConstraint constraintWithItem:self.view.safeAreaLayoutGuide attribute:(NSLayoutAttributeTop) relatedBy:(NSLayoutRelationEqual) toItem:showTableView attribute:(NSLayoutAttributeTop) multiplier:1.0 constant:0.0].active = YES;
     [NSLayoutConstraint constraintWithItem:self.view.safeAreaLayoutGuide attribute:(NSLayoutAttributeLeft) relatedBy:(NSLayoutRelationEqual) toItem:showTableView attribute:(NSLayoutAttributeLeft) multiplier:1.0 constant:0.0].active = YES;
     [NSLayoutConstraint constraintWithItem:self.view.safeAreaLayoutGuide attribute:(NSLayoutAttributeBottom) relatedBy:(NSLayoutRelationEqual) toItem:showTableView attribute:(NSLayoutAttributeBottom) multiplier:1.0 constant:0.0].active = YES;
@@ -49,7 +54,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
@@ -64,7 +68,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.navigationController pushViewController:_datas[indexPath.row] animated:YES];
-//    [self presentViewController:_datas[indexPath.row] animated:YES completion:nil];
 }
 
 @end
