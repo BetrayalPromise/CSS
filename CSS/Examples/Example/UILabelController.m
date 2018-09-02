@@ -40,7 +40,6 @@
     }];
     
     [self.view.yoga applyLayoutPreservingOrigin:YES];
-
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

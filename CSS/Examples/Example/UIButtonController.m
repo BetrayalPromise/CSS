@@ -7,6 +7,8 @@
 //
 
 #import "UIButtonController.h"
+#import <MineCommonUtils/MineCommonUtils.h>
+#import <YogaKit/UIView+Yoga.h>
 
 @interface UIButtonController ()
 
@@ -17,6 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+
+    [self.view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.flexDirection = YGFlexDirectionColumn;
+        layout.alignItems = YGAlignCenter;
+        layout.justifyContent = YGJustifyCenter;
+    }];
+
+    UIButton * button0 = [UIButton structureView];
+    [button0 setTitle:@"ABC" forState:(UIControlStateNormal)];
+    button0.backgroundColor = [UIColor redColor];
+    [self.view addSubview:button0];
+    [button0 configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.flexWrap = YGWrapWrap;
+    }];
+
+    [self.view.yoga applyLayoutPreservingOrigin:YES];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
