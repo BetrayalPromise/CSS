@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CSS/Examples/ExampleViewController.m"
+            timestampString = "557895401.955525"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "-loadView"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ExampleViewController loadView]"
+                  moduleName = "CSS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lichunyang/Desktop/GitManage/CSS/CSS/Examples/ExampleViewController.m"
+                  timestampString = "558007253.338755"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "71">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__33-[ExampleViewController loadView]_block_invoke"
+                  moduleName = "CSS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lichunyang/Desktop/GitManage/CSS/CSS/Examples/ExampleViewController.m"
+                  timestampString = "558007253.343713"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
