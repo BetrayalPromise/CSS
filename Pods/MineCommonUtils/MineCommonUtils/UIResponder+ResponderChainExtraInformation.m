@@ -10,7 +10,7 @@
 
 @implementation UIResponder (ResponderChainExtraInformation)
 
-- (void)transferObject:(id _Nullable)object selector:(SEL _Nullable)selector userInfo:(NSDictionary *_Nullable)userInfo {
+- (void)transferObject:(id _Nullable)object selector:(SEL _Nullable)selector userInfo:(id _Nullable)userInfo {
     [[self nextResponder] transferObject:object selector:selector userInfo:userInfo];
 }
 

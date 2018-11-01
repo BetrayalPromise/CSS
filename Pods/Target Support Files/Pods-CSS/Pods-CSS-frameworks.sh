@@ -143,14 +143,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/MessageTrash/MessageTrash.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MineCommonUtils/MineCommonUtils.framework"
+  install_framework "${PODS_ROOT}/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/MessageTrash/MessageTrash.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MineCommonUtils/MineCommonUtils.framework"
+  install_framework "${PODS_ROOT}/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework"
 fi

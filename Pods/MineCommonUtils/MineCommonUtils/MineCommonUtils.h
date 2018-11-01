@@ -61,3 +61,22 @@
 
 /// 获取安全区范围
 #import "UIView+CoverScope.h"
+
+/// 处理超出范围响应
+#import "UIView+Chain.h"
+
+/// 传递多参数
+#import "NSObject+PerformSelector.h"
+
+/// 字符串转色值
+#import "NSString+ColorValue.h"
+
+#import "NSString+Attribute.h"
+
+#import "UITableViewCell+IndexPath.h"
+#import "UITableViewHeaderFooterView+IndexPath.h"
+#import "UICollectionViewCell+IndexPath.h"
+#import "UICollectionReusableView+IndexPath.h"
+
+
+#import "UIButton+HandleEventBlock.h"

@@ -13,3 +13,6 @@
 + (instancetype _Nullable)displayController;
 
 @end
+
+extern UIViewController * appRootController(void);
+

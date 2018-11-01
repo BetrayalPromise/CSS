@@ -12,6 +12,7 @@
 #import "Example0Controller.h"
 #import "Example1Controller.h"
 #import "Example2Controller.h"
+#import "Example3Controller.h"
 
 @interface ExampleViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -24,7 +25,7 @@
 - (void)loadView {
     [super loadView];
     
-    _datas = @[@"安全区范围处理", @"标签的抗拉抗压属性处理", @"ABC"];
+    _datas = @[@"安全区范围处理", @"标签的抗拉抗压属性处理", @"", @""];
 }
 
 - (void)viewDidLoad {
@@ -67,6 +68,8 @@
         [self.navigationController pushViewController:[Example1Controller new] animated:YES];
     } else if (indexPath.row == 2) {
         [self.navigationController pushViewController:[Example2Controller new] animated:YES];
+    } else if (indexPath.row == 3) {
+        [self.navigationController pushViewController:[Example3Controller new] animated:YES];
     }
 }
 

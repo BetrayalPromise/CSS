@@ -6,7 +6,6 @@
 //  Copyright © 2016 TuoErJia. All rights reserved.
 //
 
-#import "MessageTrash.h"
 #import "UIView+Style.h"
 #import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
@@ -34,10 +33,6 @@
 }
 
 - (instancetype _Nonnull)createStyle:(void (^_Nullable)(id _Nonnull source))style store:(BOOL)store {
-    if (!objc_getAssociatedObject(self, @selector(associatedObjectLifeCycle))) {
-        objc_setAssociatedObject(self, @selector(associatedObjectLifeCycle), [MessageTrash new], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-
     if (style) {
         if (store) {
             self.ownStyle = style;
@@ -56,11 +51,5 @@
     return self;
 }
 
-- (void)associatedObjectLifeCycle {
-}
-
-- (id)forwardingTargetForSelector:(SEL)aSelector {
-    return objc_getAssociatedObject(self, @selector(associatedObjectLifeCycle)) != nil ? objc_getAssociatedObject(self, @selector(associatedObjectLifeCycle)) : [MessageTrash new];
-}
 
 @end

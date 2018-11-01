@@ -48,3 +48,7 @@
 }
 
 @end
+
+extern UIViewController * appRootController(void) {
+    return [UIApplication sharedApplication].delegate.window.rootViewController;
+}

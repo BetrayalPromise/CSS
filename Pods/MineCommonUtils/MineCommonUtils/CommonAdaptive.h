@@ -8,63 +8,28 @@
 
 #import <CoreGraphics/CoreGraphics.h>
 #import <Foundation/Foundation.h>
-@class DeviceSize;
 
-typedef NS_ENUM(NSUInteger, DesignTemplate) { DesignTemplateInch35 = 0, DesignTemplateInch40 = 1, DesignTemplateInch47 = 2, DesignTemplateInch55 = 3, DesignTemplateInch58 = 4 };
-
-typedef NS_ENUM(NSUInteger, AdaptiveFont) {
-    ///  自适应调整 字体依次增加2.5
-    AdaptiveFontSelfAdaption,
-    ///  固定
-    AdaptiveFontFixation,
-    ///  常规
-    AdaptiveFontCommon,
+/// 设计模版类型
+typedef NS_ENUM(NSUInteger, Design) {
+    Design_320 = 1,
+    Design_375 = 2,
+    Design_414 = 3,
 };
 
-typedef NS_ENUM(NSUInteger, AdaptiveRefer) {
-    ///  固定
-    AdaptiveReferFixation,
-    /// 按X轴
-    AdaptiveReferRatioX,
-    /// 按Y轴
-    AdaptiveReferRatioY,
-};
+typedef struct LogicSize {
+    CGFloat size_320;
+    CGFloat size_375;
+    CGFloat size_414;
+} LogicSize;
 
-@interface CommonAdaptive : NSObject
+/// 缺省是按照iPhone X标准处理
+extern void setTemplate(Design dsign);
 
-@property (nonatomic, assign) DesignTemplate designTemplate;
+/**
+ 只针对iPhone适配 iPad不处理 讲模式同尺寸的s值设置为1.0
 
-+ (instancetype _Nonnull)sharedInstance;
-+ (CGFloat)widgetCustomAdaptive:(void (^_Nonnull)(DeviceSize *_Nonnull size))closure;
-
-+ (CGFloat)widgetFontAdaptive:(AdaptiveFont)type designSize:(CGFloat)designSize;
-/*
-    参照X轴或者Y轴的标准
+ @param design 设计尺寸
+ @param closure 构建
+ @return 适配尺寸
  */
-+ (CGSize)widge2DimensionAdaptive:(AdaptiveRefer)type designSize:(CGSize)designSize multiply:(CGFloat)multiply minitrim:(CGFloat)minitrim;
-+ (CGSize)widge2DimensionAdaptive:(AdaptiveRefer)type designSize:(CGSize)designSize multiply:(CGFloat)multiply;
-+ (CGSize)widge2DimensionAdaptive:(AdaptiveRefer)type designSize:(CGSize)designSize minitrim:(CGFloat)minitrim;
-+ (CGSize)widge2DimensionAdaptive:(AdaptiveRefer)type designSize:(CGSize)designSize;
-
-+ (CGFloat)widget1DimensionAdaptive:(AdaptiveRefer)type designMeasure:(CGFloat)designMeasure multiply:(CGFloat)multiply minitrim:(CGFloat)minitrim;
-+ (CGFloat)widget1DimensionAdaptive:(AdaptiveRefer)type designMeasure:(CGFloat)designMeasure multiply:(CGFloat)multiply;
-+ (CGFloat)widget1DimensionAdaptive:(AdaptiveRefer)type designMeasure:(CGFloat)designMeasure minitrim:(CGFloat)minitrim;
-+ (CGFloat)widget1DimensionAdaptive:(AdaptiveRefer)type designMeasure:(CGFloat)designMeasure;
-
-@end
-
-
-@interface DeviceSize : NSObject
-
-/// 3gs 4 4s
-@property (nonatomic, assign) CGFloat inch35;
-/// 5 5c 5s se
-@property (nonatomic, assign) CGFloat inch40;
-/// 6 6s 7 7s 8
-@property (nonatomic, assign) CGFloat inch47;
-/// 6ps 6sps 7ps 7sps 8ps
-@property (nonatomic, assign) CGFloat inch55;
-/// x
-@property (nonatomic, assign) CGFloat inch58;
-
-@end
+extern CGFloat widgetAdaptive(CGFloat design, void(^closure)(LogicSize * s));

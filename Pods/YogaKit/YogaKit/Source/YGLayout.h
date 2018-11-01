@@ -46,13 +46,15 @@ typedef NS_OPTIONS(NSInteger, YGDimensionFlexibility) {
 @property (nonatomic, readwrite, assign, setter=setEnabled:) BOOL isEnabled;
 /// 语言布局方向
 @property (nonatomic, readwrite, assign) YGDirection direction;
-
 /// 整体布局方向
 @property (nonatomic, readwrite, assign) YGFlexDirection flexDirection;
 /// 主轴布局
 @property (nonatomic, readwrite, assign) YGJustify justifyContent;
+/// 行排列
 @property (nonatomic, readwrite, assign) YGAlign alignContent;
+/// 项排列
 @property (nonatomic, readwrite, assign) YGAlign alignItems;
+/// 侧轴排列
 @property (nonatomic, readwrite, assign) YGAlign alignSelf;
 @property (nonatomic, readwrite, assign) YGPositionType position;
 @property (nonatomic, readwrite, assign) YGWrap flexWrap;

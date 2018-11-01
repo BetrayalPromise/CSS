@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, Scope) {
-    ScopeTop = 1 << 0,
-    ScopeLeft = 1 << 1,
-    ScopeBottom = 1 << 2,
-    ScopeRight = 1 << 3,
-    ScopeContent = 1 << 4,
+
+typedef NS_OPTIONS(NSUInteger, SafeAreaScope) {
+    SafeAreaScopeNavigationBar = 1 << 0,
+    SafeAreaScopeTabBar = 1 << 1,
 };
 
 @interface UIView (CoverScope)
 
-- (CGRect)scopeRect:(Scope)scope;
-
 @end
+
+extern BOOL styleX(void);
+extern UIEdgeInsets windowSafeAreaInset(void);
+extern UIEdgeInsets controllerSafeInset(SafeAreaScope scopes, ...);

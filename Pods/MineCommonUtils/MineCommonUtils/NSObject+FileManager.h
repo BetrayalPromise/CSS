@@ -11,19 +11,35 @@
 #pragma mark - FileManager
 @interface NSObject (FileManager)
 
-/** 类方法获取文件的大小 有回调 */
+/**
+ 获取文件的大小
+
+ @param path 路径
+ @param completionBlock 完成回掉
+ */
 + (void)getFileSizeWithFileName:(NSString *_Nullable)path completion:(void (^_Nullable)(unsigned long long totalSize))completionBlock;
-/** 对象方法获取文件的大小 有回调 */
-- (void)getFileSizeWithFileName:(NSString *_Nullable)path completion:(void (^_Nullable)(unsigned long long totalSize))completionBlock;
 
-/** 类方法获取caches路径 */
+/**
+ 获取caches路径
+
+ @return caches路径
+ */
 + (NSString *_Nullable)cachesPath;
-/** 对象方法获取caches路径 */
-- (NSString *_Nullable)cachesPath;
 
-/** 类方法移除caches 有回调 */
+/**
+ 移除caches
+
+ @param completionBlock 完成回掉
+ */
 + (void)removeCachesWithCompletion:(void (^_Nullable)(void))completionBlock;
-/** 对象方法移除caches 有回调 */
-- (void)removeCachesWithCompletion:(void (^_Nullable)(void))completionBlock;
+
+/**
+ 获取文件尺寸
+
+ @param filePath 文件路径
+ @param diskMode 是否为磁盘模式
+ @return 文件尺寸
+ */
++ (uint64_t)sizeAtPath:(NSString *)filePath diskMode:(BOOL)diskMode;
 
 @end

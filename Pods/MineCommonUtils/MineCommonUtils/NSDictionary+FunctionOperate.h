@@ -20,4 +20,5 @@
 - (NSDictionary *_Nullable)filter:(BOOL (^_Nullable)(id _Nonnull key, id _Nonnull object))condition;
 - (NSDictionary *_Nullable)reject:(BOOL (^_Nullable)(id _Nonnull key, id _Nonnull object))condition;
 - (NSDictionary *_Nullable)map:(id _Nonnull (^_Nullable)(id _Nonnull key, id _Nonnull object))callback;
+
 @end

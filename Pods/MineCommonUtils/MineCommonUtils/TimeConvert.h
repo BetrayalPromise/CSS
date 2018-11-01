@@ -29,3 +29,6 @@
 - (NSString *_Nullable)getTimeWithFormat:(NSString *_Nonnull)format;
 
 @end
+
+extern int64_t dayOfYear(int64_t year);
+extern struct tm * localTimeDetail(void);

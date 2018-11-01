@@ -20,7 +20,7 @@ static inline NSString *__setter_selector_name_of_property(NSString *property) {
 
 + (void)attachAddressProperty:(NSString *)name policy:(objc_AssociationPolicy)policy {
     if (!name.length) {
-        [[NSException exceptionWithName:@"PropertyException" reason:@"property must not be empty in +addObjectProperty:associationPolicy:" userInfo:@{@"name" : name, @"policy" : @(policy)}] raise];
+        [[NSException exceptionWithName:@"PropertyException" reason:@"property must not be empty in +addObjectProperty:associationPolicy:" userInfo:@{ @"name" : name, @"policy" : @(policy) }] raise];
     }
 
     // 1. 通过class的指针和property的name，创建一个唯一的key
@@ -48,7 +48,7 @@ static inline NSString *__setter_selector_name_of_property(NSString *property) {
 
 + (void)attachValueProperty:(NSString *)name encodingType:(char *)type policy:(objc_AssociationPolicy)policy {
     if (!name.length) {
-        [[NSException exceptionWithName:@"PropertyException" reason:@"property must not be empty in +addBasicProperty:encodingType:" userInfo:@{@"name" : name, @"type" : @(type)}] raise];
+        [[NSException exceptionWithName:@"PropertyException" reason:@"property must not be empty in +addBasicProperty:encodingType:" userInfo:@{ @"name" : name, @"type" : @(type) }] raise];
     }
 
     if (strcmp(type, @encode(id)) == 0) {
@@ -58,18 +58,18 @@ static inline NSString *__setter_selector_name_of_property(NSString *property) {
     id setblock;
     id getBlock;
 
-#define blockWithCaseType(C_TYPE)                                                                                                                                                                                                                        \
-    if (strcmp(type, @encode(C_TYPE)) == 0) {                                                                                                                                                                                                            \
-        setblock = ^(id self, C_TYPE var) {                                                                                                                                                                                                              \
-            NSValue *value = [NSValue value:&var withObjCType:type];                                                                                                                                                                                     \
-            objc_setAssociatedObject(self, (__bridge void *) key, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);                                                                                                                                             \
-        };                                                                                                                                                                                                                                               \
-        getBlock = ^C_TYPE(id self) {                                                                                                                                                                                                                    \
-            NSValue *value = objc_getAssociatedObject(self, (__bridge void *) key);                                                                                                                                                                      \
-            C_TYPE var;                                                                                                                                                                                                                                  \
-            [value getValue:&var];                                                                                                                                                                                                                       \
-            return var;                                                                                                                                                                                                                                  \
-        };                                                                                                                                                                                                                                               \
+#define blockWithCaseType(C_TYPE) \
+    if (strcmp(type, @encode(C_TYPE)) == 0) { \
+        setblock = ^(id self, C_TYPE var) { \
+            NSValue *value = [NSValue value:&var withObjCType:type]; \
+            objc_setAssociatedObject(self, (__bridge void *) key, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC); \
+        }; \
+        getBlock = ^C_TYPE(id self) { \
+            NSValue *value = objc_getAssociatedObject(self, (__bridge void *) key); \
+            C_TYPE var; \
+            [value getValue:&var]; \
+            return var; \
+        }; \
     }
 
     blockWithCaseType(char);
@@ -97,7 +97,7 @@ static inline NSString *__setter_selector_name_of_property(NSString *property) {
 #undef blockWithCaseType
 
     if (!setblock || !getBlock) {
-        [[NSException exceptionWithName:@"PropertyException" reason:@"type is an unknown type in +addValueProperty:encodingType:" userInfo:@{@"name" : name, @"type" : @(type)}] raise];
+        [[NSException exceptionWithName:@"PropertyException" reason:@"type is an unknown type in +addValueProperty:encodingType:" userInfo:@{ @"name" : name, @"type" : @(type) }] raise];
     }
 
     IMP setImp = imp_implementationWithBlock(setblock);

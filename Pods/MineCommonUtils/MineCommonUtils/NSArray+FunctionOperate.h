@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, ReserveWeight) {
 /**
  if Source Array is nil all return nil else not return nil
  */
-@interface NSArray <T : id>(FunctionOperate)
+@interface NSArray <T : id> (FunctionOperate)
 
 /**
  过滤
@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, ReserveWeight) {
  @param condition (不能为空)过滤条件 为nil 则返回nil
  @return 满足过滤条件的新数组
  */
-- (NSArray<T> *_Nullable)filter:(BOOL (^_Nonnull)(T _Nonnull object))condition __attribute__((nonnull(1)));
+- (NSArray<T> * _Nullable) filter : (BOOL (^_Nonnull)(T _Nonnull object)) condition __attribute__((nonnull(1)));
 
 
 /**

@@ -10,15 +10,20 @@
 #import "NSString+FunctionOperate.h"
 #import <CommonCrypto/CommonDigest.h>
 
-#define str(A, ...) [NSString stringWithFormat:A, ##__VA_ARGS__]
+#define string(A, ...) [NSString stringWithFormat:A, ##__VA_ARGS__]
 
 @implementation NSString (FunctionOperate)
 
-+ (NSString *)repeat:(NSString *)text times:(int)times {
-    if (times <= 0)
++ (NSString *)repeat:(NSString *)text times:(NSUInteger)times {
+    if (!text) {
+        return nil;
+    }
+    if (times <= 0) {
         return @"";
+    }
+    
     NSMutableString *str = [NSMutableString string];
-    for (int i = 0; i < times; i++) {
+    for (int i = 0; i < times; i ++) {
         [str appendString:text];
     }
     return str;
@@ -138,9 +143,9 @@
 }
 
 - (NSString *)pascalCase {
-    NSString *withoutWhiteSpaces = [[self explode:@" "] reduce:^id(NSString *carry, NSString *word) { return str(@"%@%@", carry, word.ucFirst); } carry:@""];
+    NSString *withoutWhiteSpaces = [[self explode:@" "] reduce:^id(NSString *carry, NSString *word) { return string(@"%@%@", carry, word.ucFirst); } carry:@""];
 
-    return [[withoutWhiteSpaces explode:@"_"] reduce:^id(NSString *carry, NSString *word) { return str(@"%@%@", carry, word.ucFirst); } carry:@""];
+    return [[withoutWhiteSpaces explode:@"_"] reduce:^id(NSString *carry, NSString *word) { return string(@"%@%@", carry, word.ucFirst); } carry:@""];
 }
 
 - (NSString *)snakeCase {
@@ -163,7 +168,7 @@
     if (self.length <= 1) {
         return self.uppercaseString;
     } else {
-        return str(@"%@%@", [[self substringToIndex:1] uppercaseString], [self substringFromIndex:1]);
+        return string(@"%@%@", [[self substringToIndex:1] uppercaseString], [self substringFromIndex:1]);
     }
 }
 
@@ -171,7 +176,7 @@
     if (self.length <= 1) {
         return self.lowercaseString;
     } else {
-        return str(@"%@%@", [[self substringToIndex:1] lowercaseString], [self substringFromIndex:1]);
+        return string(@"%@%@", [[self substringToIndex:1] lowercaseString], [self substringFromIndex:1]);
     }
 }
 

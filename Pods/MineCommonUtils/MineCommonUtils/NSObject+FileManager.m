@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+FileManager.h"
+#import <sys/stat.h>
 
 #pragma mark - FileManager
 @implementation NSObject (FileManager)
@@ -54,17 +55,9 @@
     });
 }
 
-- (void)getFileSizeWithFileName:(NSString *_Nullable)path completion:(void (^_Nullable)(unsigned long long totalSize))completionBlock {
-    [NSObject getFileSizeWithFileName:path completion:completionBlock];
-}
-
 /** 获取路径 */
 + (NSString *_Nullable)cachesPath {
     return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-}
-
-- (NSString *_Nullable)cachesPath {
-    return [NSObject cachesPath];
 }
 
 /** 删除caches */
@@ -96,8 +89,32 @@
     }];
 }
 
-- (void)removeCachesWithCompletion:(void (^_Nullable)(void))completionBlock {
-    [NSObject removeCachesWithCompletion:completionBlock];
++ (uint64_t)sizeAtPath:(NSString *)filePath diskMode:(BOOL)diskMode {
+    uint64_t totalSize = 0;
+    NSMutableArray *searchPaths = [NSMutableArray arrayWithObject:filePath];
+    while ([searchPaths count] > 0) {
+        @autoreleasepool {
+            NSString *fullPath = [searchPaths objectAtIndex:0];
+            [searchPaths removeObjectAtIndex:0];
+
+            struct stat fileStat;
+            if (lstat([fullPath fileSystemRepresentation], &fileStat) == 0) {
+                if (fileStat.st_mode & S_IFDIR) {
+                    NSArray *childSubPaths = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:fullPath error:nil];
+                    for (NSString *childItem in childSubPaths) {
+                        NSString *childPath = [fullPath stringByAppendingPathComponent:childItem];
+                        [searchPaths insertObject:childPath atIndex:0];
+                    }
+                } else {
+                    if (diskMode)
+                        totalSize += fileStat.st_blocks * 512;
+                    else
+                        totalSize += fileStat.st_size;
+                }
+            }
+        }
+    }
+    return totalSize;
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "TimeConvert.h"
+#include <time.h>
 
 @implementation TimeManage
 
@@ -66,3 +67,23 @@
 }
 
 @end
+
+extern int64_t dayOfYear(int64_t year) {
+    int yday;
+    if((year % 4 ==0 && year % 100 != 0) || year % 400 == 0) {
+        yday = 366;
+    } else {
+        yday = 365;
+    }
+    return yday;
+}
+
+
+extern struct tm * localTimeDetail(void) {
+    time_t t = 0;
+    struct tm * lt = NULL;
+    time(&t);
+    lt = localtime(&t);
+    printf( "%d/%d/%d %d:%d:%d\n", lt->tm_year + 1900, lt->tm_mon, lt->tm_mday, lt->tm_hour, lt->tm_min, lt->tm_sec);
+    return lt;
+}

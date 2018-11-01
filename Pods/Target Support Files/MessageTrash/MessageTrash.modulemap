@@ -1,6 +1,0 @@
-framework module MessageTrash {
-  umbrella header "MessageTrash-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -238,7 +238,7 @@ static inline NSUInteger FCCacheParsedObject(__unsafe_unretained id object, __un
     NSUInteger offset = (NSUInteger) CFDataGetLength((CFMutableDataRef) cache);
 
 #if FC_DIAGNOSTIC_ENABLED
-    if (![@ [[NSURL class], [NSString class]] containsObject:[object classForCoder]]) {
+    if (![@[ [NSURL class], [NSString class] ] containsObject:[object classForCoder]]) {
         printf("%tu: %s\n", offset / sizeof(id), [[[object classForCoder] description] UTF8String]);
     }
 #endif

@@ -442,12 +442,11 @@
 - (NSDictionary *_Nullable)mapToAssoc:(NSArray *_Nullable (^_Nullable)(id _Nullable obj, NSUInteger idx))block {
     if (block) {
         NSArray *pairs = [self map:block];
-        return [pairs
-            reduce:^id(NSMutableDictionary *dict, NSArray *mapped) {
-                dict[mapped[0]] = mapped[1];
-                return dict;
-            }
-             carry:[NSMutableDictionary new]];
+        return [pairs reduce:^id(NSMutableDictionary *dict, NSArray *mapped) {
+            dict[mapped[0]] = mapped[1];
+            return dict;
+        }
+                       carry:[NSMutableDictionary new]];
     }
     return nil;
 }
@@ -902,7 +901,6 @@
 
 
 @interface NSObject ()
-
 
 
 @end

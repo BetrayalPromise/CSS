@@ -35,7 +35,7 @@
     //    va_end(args);
 
     for (NSUInteger i = 0; i < methodIndexArray.count; i++) {
-        Method method = methodList [[methodIndexArray [i] integerValue]];
+        Method method = methodList[[methodIndexArray[i] integerValue]];
         IMP implementation = method_getImplementation(method);
         ((void *(*) (id, SEL, ...)) implementation)(target, selector, info);
     }

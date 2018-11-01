@@ -10,7 +10,7 @@
 
 @interface NSString (FunctionOperate)
 
-+ (NSString *)repeat:(NSString *)text times:(int)times;
++ (NSString *)repeat:(NSString *)text times:(NSUInteger)times;
 + (BOOL)isEmptyString:(NSString *)string;
 
 - (NSArray *)explode:(NSString *)delimiter;

@@ -10,70 +10,48 @@
 
 @implementation UIView (CoverScope)
 
-- (CGRect)scopeRect:(Scope)scope {
-    if ([[self nextResponder] isKindOfClass:[UIViewController class]]) {
-        UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+@end
 
-        CGRect screenRect = [UIScreen mainScreen].bounds;
-        CGRect statusBarRect = [UIApplication sharedApplication].statusBarFrame;
-        CGRect navigationBarRect = ((UIViewController *) [self nextResponder]).navigationController.navigationBar.frame;
-        CGRect tabBarRect = ((UIViewController *) [self nextResponder]).tabBarController.tabBar.frame;
-
-        CGFloat currentWidth = ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)] ? [UIScreen mainScreen].nativeBounds.size.width / [UIScreen mainScreen].nativeScale : [UIScreen mainScreen].bounds.size.width);
-        CGFloat currentHight = ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)] ? [UIScreen mainScreen].nativeBounds.size.height / [UIScreen mainScreen].nativeScale : [UIScreen mainScreen].bounds.size.height);
-
-        BOOL isHeteromorphic = NO;
-        if (currentWidth == 375 && currentHight == 812) {
-            isHeteromorphic = YES;
-        } else {
-            isHeteromorphic = NO;
-        }
-
-        if (UIDeviceOrientationIsPortrait(orientation)) {
-            if (scope == ScopeTop) {
-                return CGRectMake(0, 0, screenRect.size.width, statusBarRect.size.height + navigationBarRect.size.height);
-            } else if (scope == ScopeLeft) {
-                return CGRectMake(0, statusBarRect.size.height + navigationBarRect.size.height, 0, screenRect.size.height - (statusBarRect.size.height + navigationBarRect.size.height + tabBarRect.size.height));
-            } else if (scope == ScopeBottom) {
-                return tabBarRect;
-            } else if (scope == ScopeRight) {
-                return CGRectMake(screenRect.size.width, statusBarRect.size.height + navigationBarRect.size.height, 0, screenRect.size.height - (statusBarRect.size.height + navigationBarRect.size.height + tabBarRect.size.height));
-            } else if (scope == ScopeContent) {
-                return CGRectMake(0, statusBarRect.size.height + navigationBarRect.size.height, screenRect.size.width, screenRect.size.height - (statusBarRect.size.height + navigationBarRect.size.height + tabBarRect.size.height));
-            } else {
-                return CGRectZero;
-            }
-        } else if (UIDeviceOrientationIsLandscape(orientation)) {
-            if (scope == ScopeTop) {
-                return CGRectMake(0, 0, screenRect.size.width, statusBarRect.size.height + navigationBarRect.size.height);
-            } else if (scope == ScopeLeft) {
-                if (isHeteromorphic) {
-                    return CGRectMake(0, statusBarRect.size.height + navigationBarRect.size.height, 44, screenRect.size.height - (statusBarRect.size.height + navigationBarRect.size.height + tabBarRect.size.height));
-                } else {
-                    return CGRectMake(0, statusBarRect.size.height + navigationBarRect.size.height, 0, screenRect.size.height - (statusBarRect.size.height + navigationBarRect.size.height + tabBarRect.size.height));
-                }
-            } else if (scope == ScopeBottom) {
-                return tabBarRect;
-            } else if (scope == ScopeRight) {
-                if (isHeteromorphic) {
-                    return CGRectMake(screenRect.size.width - 44, statusBarRect.size.height + navigationBarRect.size.height, 44, screenRect.size.height - (statusBarRect.size.height + navigationBarRect.size.height + tabBarRect.size.height));
-                } else {
-                    return CGRectMake(screenRect.size.width, statusBarRect.size.height + navigationBarRect.size.height, 0, screenRect.size.height - (statusBarRect.size.height + navigationBarRect.size.height + tabBarRect.size.height));
-                }
-            } else if (scope == ScopeContent) {
-                if (isHeteromorphic) {
-                    return CGRectMake(44, statusBarRect.size.height + navigationBarRect.size.height, screenRect.size.width - 88, screenRect.size.height - (statusBarRect.size.height + navigationBarRect.size.height + tabBarRect.size.height));
-                } else {
-                    return CGRectMake(0, statusBarRect.size.height + navigationBarRect.size.height, screenRect.size.width, screenRect.size.height - (statusBarRect.size.height + navigationBarRect.size.height + tabBarRect.size.height));
-                }
-            } else {
-                return CGRectZero;
-            }
-        } else {
-            return CGRectZero;
-        }
+extern BOOL styleX(void) {
+    CGFloat width = ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)] ? [UIScreen mainScreen].nativeBounds.size.width / [UIScreen mainScreen].nativeScale : [UIScreen mainScreen].bounds.size.width);
+    CGFloat height = ([[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)] ? [UIScreen mainScreen].nativeBounds.size.height / [UIScreen mainScreen].nativeScale : [UIScreen mainScreen].bounds.size.height);
+    if ((width == 375 && height == 812) || (width == 414 && height == 896)) {
+        return YES;
     }
-    return CGRectZero;
+    return NO;
 }
 
-@end
+extern UIEdgeInsets windowSafeAreaInset(void) {
+    if (@available(iOS 11.0, *)) {
+        return [UIApplication sharedApplication].keyWindow.safeAreaInsets;
+    }
+    return UIEdgeInsetsZero;
+}
+
+extern UIEdgeInsets controllerSafeInset(SafeAreaScope scopes, ...) {
+    NSUInteger value = 0;
+    if (scopes) {
+        value += scopes;
+        va_list args;
+        SafeAreaScope arg;
+        va_start(args, scopes);
+        while ((arg = va_arg(args, SafeAreaScope))) {
+            value += arg;
+        }
+        va_end(args);
+    }
+    UIEdgeInsets edge = windowSafeAreaInset();
+    if (value == 0) {
+        return edge;
+    } else if (value == 1) {
+        return UIEdgeInsetsMake(edge.top + 44, edge.left, edge.bottom, edge.right);
+    } else if (value == 2) {
+        return UIEdgeInsetsMake(edge.top, edge.left, edge.bottom + 49, edge.right);
+    } else if (value == 3) {
+        return UIEdgeInsetsMake(edge.top + 44, edge.left, edge.bottom + 49, edge.right);
+    } else {
+        assert(false);
+        return UIEdgeInsetsZero;
+    }
+}
+
