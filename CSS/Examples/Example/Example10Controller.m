@@ -2,7 +2,7 @@
 //  Example10Controller.m
 //  CSS
 //
-//  Created by 李阳 on 28/11/2018.
+//  Created by mac on 2018/11/28.
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 #import <YogaKit/UIView+Yoga.h>
 #import "UIColor+Random.h"
 
-@interface Example10Controller () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface Example10Controller () <UICollectionViewDelegate, UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NSMutableArray <NSString *> * datas;
 
@@ -22,7 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-
+    
+    _datas = [NSMutableArray array];
+    for (NSInteger i = 0; i < 10; i ++) {
+        [_datas addObject:[[self textForShow] substringWithRange:NSMakeRange(0, arc4random() % ([self textForShow].length - 1))]];
+    }
     UIEdgeInsets edge = controllerSafeInset(SafeAreaScopeNavigationBar, nil);
     [self.view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
@@ -39,6 +43,9 @@
     }
 
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.estimatedItemSize = CGSizeMake(100, 95.0);
+    layout.itemSize = UICollectionViewFlowLayoutAutomaticSize;
+    
     UICollectionView * showCollectionView = [[[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout] objectThen:^(__kindof UICollectionView * _Nonnull source) {
         [source registerReuseCellClass:[CustomCollectionViewCell class]];
         source.delegate = self;
@@ -51,7 +58,6 @@
 
     [self.view.yoga applyLayoutPreservingOrigin:YES];
 }
-
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CustomCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CustomCollectionViewCell class]) forIndexPath:indexPath];
@@ -91,8 +97,7 @@
         layout.isEnabled = YES;
         layout.flexWrap = YGWrapWrap;
     }];
-
-    [textLabel configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+    [self.textLabel configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
         layout.flexGrow = 1.0;
         layout.flexShrink = 1.0;
@@ -102,17 +107,19 @@
 - (void)configure:(id)model {
     self.textLabel.text = model;
     [self.textLabel.yoga markDirty];
-
-    [self.contentView.yoga applyLayoutPreservingOrigin:YES];
+//    [self.contentView.yoga applyLayoutPreservingOrigin:YES];
 }
 
 - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes {
     UICollectionViewLayoutAttributes *attributes = [super preferredLayoutAttributesFittingAttributes:layoutAttributes];
-    CGRect rect = [self.textLabel.text boundingRectWithSize:CGSizeMake(100, CGFLOAT_MAX) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: self.textLabel.font} context:nil];
-    rect.size.width +=8;
-    rect.size.height+=8;
-    attributes.frame = rect;
+    CGSize size = [self.textLabel sizeThatFits:CGSizeMake(100, MAXFLOAT)];
+    attributes.frame = CGRectMake(0, 0, size.width, size.height);
     return attributes;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self.contentView.yoga applyLayoutPreservingOrigin:YES];
 }
 
 @end
