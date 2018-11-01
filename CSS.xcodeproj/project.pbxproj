@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0408BB9521AB9D8400C9050C /* Example3Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408BB9421AB9D8400C9050C /* Example3Controller.m */; };
+		04FE4439218AFFA300FCC692 /* Example4Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FE4438218AFFA300FCC692 /* Example4Controller.m */; };
 		11120C5420D24C3F00D39DD4 /* FlexContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11120C5320D24C3F00D39DD4 /* FlexContainerViewController.m */; };
 		11120C5720D24C5200D39DD4 /* FlexItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11120C5620D24C5200D39DD4 /* FlexItemViewController.m */; };
 		11120C5A20D24D6000D39DD4 /* FlexDirectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11120C5920D24D6000D39DD4 /* FlexDirectionViewController.m */; };
@@ -33,6 +34,8 @@
 /* Begin PBXFileReference section */
 		0408BB9321AB9D8400C9050C /* Example3Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example3Controller.h; sourceTree = "<group>"; };
 		0408BB9421AB9D8400C9050C /* Example3Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example3Controller.m; sourceTree = "<group>"; };
+		04FE4437218AFFA300FCC692 /* Example4Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example4Controller.h; sourceTree = "<group>"; };
+		04FE4438218AFFA300FCC692 /* Example4Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example4Controller.m; sourceTree = "<group>"; };
 		0FB6FC4AF453DD4009FF9733 /* Pods-CSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSS/Pods-CSS.release.xcconfig"; sourceTree = "<group>"; };
 		11120C5220D24C3F00D39DD4 /* FlexContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexContainerViewController.h; sourceTree = "<group>"; };
 		11120C5320D24C3F00D39DD4 /* FlexContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlexContainerViewController.m; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				11542E8C212435D500BAAB89 /* Example2Controller.m */,
 				0408BB9321AB9D8400C9050C /* Example3Controller.h */,
 				0408BB9421AB9D8400C9050C /* Example3Controller.m */,
+				04FE4437218AFFA300FCC692 /* Example4Controller.h */,
+				04FE4438218AFFA300FCC692 /* Example4Controller.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				11542E8A212435AB00BAAB89 /* Example1Controller.m in Sources */,
 				118631F320BE4E5800C75431 /* main.m in Sources */,
 				118631E520BE4E5700C75431 /* AppDelegate.m in Sources */,
+				04FE4439218AFFA300FCC692 /* Example4Controller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

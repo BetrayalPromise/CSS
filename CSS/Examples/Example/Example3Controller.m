@@ -22,7 +22,6 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor whiteColor];
-    
     UIEdgeInsets edge = controllerSafeInset(SafeAreaScopeNavigationBar, nil);
     [self.view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
@@ -43,41 +42,23 @@
         layout.padding = YGPointValue(5);
         layout.alignContent = YGAlignSpaceBetween;
     }];
-    
-    if (YES) {
-        UIView * userContentView = [[[[UIView alloc] initWithFrame:CGRectZero] objectThen:^(UIView * _Nonnull source) {
-            source.backgroundColor = [UIColor yellowColor];
-        }] attachTo:self.view];
-        [userContentView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
-            layout.isEnabled = YES;
-            layout.flexDirection = YGFlexDirectionRow;
-            layout.flexWrap = YGWrapWrap;
-            layout.padding = YGPointValue(5);
-        }];
-        
-        UIImageView * headImageView = [[[[UIImageView alloc] initWithFrame:(CGRectZero)] objectThen:^(UIImageView * _Nonnull source) {
-            source.backgroundColor = UIColor.redColor;
-        }] attachTo:userContentView];
-        [headImageView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
-            layout.isEnabled = YES;
-            layout.width = YGPointValue(100);
-            layout.height = YGPointValue(100);
-        }];
-        
-        for (NSInteger i = 0; i < 10; i ++) {
-            UILabel * nameLabel = [[[[UILabel alloc] initWithFrame:CGRectZero] objectThen:^(UILabel * _Nonnull source) {
-                source.text = @"名字";
-                source.backgroundColor = UIColor.blueColor;
-            }] attachTo:userContentView];
-            [nameLabel configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
-                layout.isEnabled = YES;
-            }];
-        }
-    }
 
+    for (NSInteger i = 0; i < 10; i ++) {
+        UILabel * label = [[[[UILabel alloc] initWithFrame:CGRectZero] objectThen:^(UILabel *_Nonnull source) {
+            source.backgroundColor = UIColor.randomColor;
+            source.numberOfLines = 0;
+        }] attachTo:contentView];
+        label.text = [[self textForShow] substringFromIndex:arc4random() % [self textForShow].length - 1];
+        [label configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+            layout.isEnabled = YES;
+        }];
+    }
     
     [self.view.yoga applyLayoutPreservingOrigin:YES];
 }
 
+- (NSString *)textForShow {
+    return @"的饭卡的飞机啊；放假看jo9得jo9见啊烤看jo9得见豆腐jo9看得见几啊看得jo9见风看jo9得见景3i-83u549-138看得见409看得见2n29320斤看法是的；开机哦怕 阿的江否34092394kajflakjfkjeeklq;rj看得见qe;kjr;lke看得见nfq看看得见得见k看得见eaj看得见rklqwejr-98看得见ujaodf看得见jowiufj看得见ipodfjasdfjo94ru看得见0c";
+}
 
 @end
