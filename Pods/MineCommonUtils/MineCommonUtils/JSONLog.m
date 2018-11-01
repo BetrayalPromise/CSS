@@ -76,8 +76,7 @@ static inline void emptyMethod(id self, SEL _cmd) {
     swizzleSelector(class, @selector(descriptionWithLocale:indent:), @selector(json_descriptionWithLocale:indent:));
     swizzleSelector(class, @selector(debugDescription), @selector(jsonlog_debugDescription));
     
-    Method source = class_getClassMethod(self, _cmd);
-    method_setImplementation(source, (IMP)emptyMethod);
+    method_setImplementation(class_getClassMethod(self, _cmd), (IMP)emptyMethod);
     dispatch_semaphore_signal(semaphore);
 }
 
@@ -119,13 +118,10 @@ static inline void emptyMethod(id self, SEL _cmd) {
     swizzleSelector(class, @selector(descriptionWithLocale:indent:), @selector(json_descriptionWithLocale:indent:));
     swizzleSelector(class, @selector(debugDescription), @selector(jsonlog_debugDescription));
     
-    Method source = class_getClassMethod(self, _cmd);
-    method_setImplementation(source, (IMP)emptyMethod);
+    method_setImplementation(class_getClassMethod(self, _cmd), (IMP)emptyMethod);
     dispatch_semaphore_signal(semaphore);
 }
 
 @end
-
-
 
 #endif

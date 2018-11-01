@@ -31,7 +31,7 @@
         layout.paddingRight = YGPointValue(edge.right);
     }];
 
-    UIView * contentView = [[UIView structureView] attachTo:self.view];
+    UIView * contentView = [[[UIView alloc] initWithFrame:CGRectZero] attachTo:self.view];
     contentView.backgroundColor = [UIColor redColor];
     [contentView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;

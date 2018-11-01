@@ -8,10 +8,18 @@
 
 #import "UIView+Chain.h"
 #import <objc/runtime.h>
+#import <RSSwizzle/RSSwizzle.h>
 
 @implementation UIView (Chain)
 
 + (void)load {
+    [self safeOnceExecture];
+}
+
++ (void)safeOnceExecture {
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    
     Class class = self;
     Method originMethod = class_getInstanceMethod(class, @selector(hitTest:withEvent:));
     Method targetMethod = class_getInstanceMethod(class, @selector(exchange_hitTest:withEvent:));
@@ -20,12 +28,18 @@
         return;
     }
     BOOL didAddMethod = class_addMethod(class,@selector(hitTest:withEvent:), method_getImplementation(targetMethod), method_getTypeEncoding(targetMethod));
-
     if (didAddMethod) {
         class_replaceMethod(class,@selector(exchange_hitTest:withEvent:), method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
     } else {
         method_exchangeImplementations(originMethod, targetMethod);
     }
+
+    method_setImplementation(class_getClassMethod(self, _cmd), (IMP)emptyMethod);
+    dispatch_semaphore_signal(semaphore);
+}
+
+static inline void emptyMethod(id self, SEL selector) {
+    
 }
 
 - (UIView *)exchange_hitTest:(CGPoint)point withEvent:(UIEvent *)event {

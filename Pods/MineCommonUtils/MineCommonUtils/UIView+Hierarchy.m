@@ -13,9 +13,18 @@
 @implementation UIView (Hierarchy)
 
 - (instancetype _Nonnull)attachTo:(UIView *_Nullable)dependView {
-    if (dependView) {
-        [dependView addSubview:self];
-    }
+    !dependView ?: [dependView addSubview:self];
+    return self;
+}
+
+- (instancetype _Nonnull)objectThen:(void (^_Nullable)(__kindof UIView * _Nonnull source))then {
+    !then ?: then(self);
+    return self;
+}
+
+- (instancetype _Nonnull)objectThen:(void (^_Nullable)(__kindof UIView * _Nonnull source))then attachTo:(UIView *_Nullable)dependView {
+    !then ?: then(self);
+    [dependView addSubview:self];
     return self;
 }
 

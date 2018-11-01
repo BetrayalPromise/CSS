@@ -6,6 +6,7 @@ target 'CSS' do
   use_frameworks!
 
 	pod 'YogaKit', '~> 1.9.0'
-    pod 'MineCommonUtils', '~> 1.1.4'
+    pod 'MineCommonUtils', :git => 'https://github.com/BetrayalPromise/MineCommonUtils.git'
     pod 'WatchdogInspector'
+    pod 'Reveal-SDK', '~> 18'
 end

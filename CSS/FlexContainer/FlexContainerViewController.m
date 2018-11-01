@@ -30,7 +30,7 @@
     [super viewDidLoad];
     self.title = @"Flex Container";
     self.view.backgroundColor = [UIColor whiteColor];
-    UITableView *showTableView = [[[UITableView structureView:(UITableViewStylePlain)] objectThen:^(UITableView *_Nonnull source) {
+    UITableView *showTableView = [[[[UITableView alloc] initWithFrame:CGRectZero style:(UITableViewStylePlain)] objectThen:^(UITableView *_Nonnull source) {
         source.translatesAutoresizingMaskIntoConstraints = NO;
         source.delegate = self;
         source.dataSource = self;

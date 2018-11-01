@@ -6,9 +6,6 @@
 //  Copyright © 2018 BetrayalPromise. All rights reserved.
 //
 
-/// 闭包构建个人喜欢
-#import "NSObject+ClosureManage.h"
-
 /// UICollectionView UITableView 便利函数
 #import "UICollectionView+Reuse.h"
 #import "UITableView+Reuse.h"
@@ -19,9 +16,6 @@
 /// 视图 控制器层级
 #import "UIView+Hierarchy.h"
 #import "UIViewController+DisplayController.h"
-
-/// 类函数构建视图
-#import "UIView+StructureView.h"
 
 /// 样式复制处理
 #import "UIView+Style.h"
@@ -78,5 +72,4 @@
 #import "UICollectionViewCell+IndexPath.h"
 #import "UICollectionReusableView+IndexPath.h"
 
-
-#import "UIButton+HandleEventBlock.h"
+#import "Scheduler.h"

@@ -42,29 +42,4 @@
     free(methodList);
 }
 
-+ (BOOL)exchangeMethodType:(MethodType)methodType sourceSel:(SEL _Nonnull)sourceSel targetSel:(SEL _Nonnull)targetSel {
-    Class class = self;
-    Method sourceMethod = NULL;
-    Method targetMethod = NULL;
-    if (methodType == MethodTypeClass) {
-        sourceMethod = class_getClassMethod(class, sourceSel);
-        targetMethod = class_getClassMethod(class, targetSel);
-    } else if (methodType == MethodTypeInstance) {
-        sourceMethod = class_getInstanceMethod(class, sourceSel);
-        targetMethod = class_getInstanceMethod(class, targetSel);
-    } else {
-        NSAssert(NO, @"必须是实例函数或者类函数");
-    }
-    if (!sourceMethod || !targetMethod) {
-        return NO;
-    }
-    BOOL didAddMethod = class_addMethod(class, sourceSel, method_getImplementation(targetMethod), method_getTypeEncoding(targetMethod));
-    if (didAddMethod) {
-        class_replaceMethod(class, targetSel, method_getImplementation(sourceMethod), method_getTypeEncoding(sourceMethod));
-    } else {
-        method_exchangeImplementations(sourceMethod, targetMethod);
-    }
-    return YES;
-}
-
 @end

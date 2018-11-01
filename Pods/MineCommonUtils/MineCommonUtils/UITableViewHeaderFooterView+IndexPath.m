@@ -8,30 +8,34 @@
 
 #import "UITableViewHeaderFooterView+IndexPath.h"
 #import <objc/runtime.h>
+#import <RSSwizzle/RSSwizzle.h>
 
 __weak static UITableView * __attachTableView;
 
 @implementation UITableViewHeaderFooterView (IndexPath)
 
 + (void)load {
-    SEL originalSelector = NSSelectorFromString(@"dealloc");
-    SEL swizzledSelector = @selector(exchange_dealloc);
-    Method originalMethod = class_getInstanceMethod(self, originalSelector);
-    Method swizzledMethod = class_getInstanceMethod(self, swizzledSelector);
-    if (!originalMethod || !swizzledMethod) {
-        return;
-    }
-    IMP originalIMP = method_getImplementation(originalMethod);
-    IMP swizzledIMP = method_getImplementation(swizzledMethod);
-    const char *originalType = method_getTypeEncoding(originalMethod);
-    const char *swizzledType = method_getTypeEncoding(swizzledMethod);
-    class_replaceMethod(self, swizzledSelector, originalIMP,originalType);
-    class_replaceMethod(self, originalSelector, swizzledIMP,swizzledType);
+    [self safeOnceExecute];
 }
 
-- (void)exchange_dealloc {
-    objc_removeAssociatedObjects(self);
-    [self exchange_dealloc];
++ (void)safeOnceExecute {
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    SEL selector = NSSelectorFromString(@"dealloc");
+    [RSSwizzle swizzleInstanceMethod:selector inClass:[self class] newImpFactory:^id(RSSwizzleInfo *swizzleInfo) {
+        return ^(__unsafe_unretained id self) {
+            void (*OriginalIMP)(__unsafe_unretained id, SEL);
+            OriginalIMP = (__typeof(OriginalIMP))[swizzleInfo getOriginalImplementation];
+            objc_setAssociatedObject(self, @selector(section), nil, OBJC_ASSOCIATION_ASSIGN);
+            OriginalIMP(self, selector);
+        };
+    } mode:(RSSwizzleModeAlways) key:NULL];
+    method_setImplementation(class_getClassMethod(self, _cmd), (IMP)emptyMethod);
+    dispatch_semaphore_signal(semaphore);
+}
+
+static inline void emptyMethod(id self, SEL selector) {
+    
 }
 
 - (void)setSection:(NSInteger)section {

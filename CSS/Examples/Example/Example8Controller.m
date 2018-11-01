@@ -45,7 +45,7 @@
     }];
 
     for (NSInteger i = 0; i < 20; i ++) {
-        UILabel * textLabel = [[[UILabel structureView] objectThen:^(UILabel * _Nonnull source) {
+        UILabel * textLabel = [[[[UILabel alloc] initWithFrame:CGRectZero] objectThen:^(UILabel * _Nonnull source) {
             source.backgroundColor = [UIColor randomColor];
             source.text = [@"DFADFADFDF" substringToIndex:arc4random() % 10];
         }] attachTo:itemsView];

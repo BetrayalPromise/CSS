@@ -11,12 +11,8 @@
 #pragma mark - Hierarchy
 @interface UIView (Hierarchy)
 
-/**
- 添加到父视图上
-
- @param dependView 父视图
- @return 视图自身
- */
 - (instancetype _Nonnull)attachTo:(UIView *_Nullable)dependView;
+- (instancetype _Nonnull)objectThen:(void (^_Nullable)(__kindof UIView * _Nonnull source))then;
+- (instancetype _Nonnull)objectThen:(void (^_Nullable)(__kindof UIView * _Nonnull source))then attachTo:(UIView *_Nullable)dependView;
 
 @end

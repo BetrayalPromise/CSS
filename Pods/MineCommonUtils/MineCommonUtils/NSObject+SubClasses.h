@@ -11,7 +11,6 @@
 #pragma mark - SubClasses
 @interface NSObject (SubClasses)
 
-//+ (NSArray *)findSubClass:(Class)assignClass;
 + (NSArray<Class> *)findSubClass;
 
 @end

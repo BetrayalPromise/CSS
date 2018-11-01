@@ -13,23 +13,6 @@
 #pragma mark - SubClasses
 @implementation NSObject (SubClasses)
 
-//+ (NSArray *)findSubClass:(Class)assignClass {
-//    int count = objc_getClassList(NULL, 0);
-//    if (count <= 0) {
-//        return @[];
-//    }
-//    NSMutableArray * subClassesArray = [NSMutableArray arrayWithObject:assignClass];
-//    Class * classes = (Class *)malloc(sizeof(Class) * count);
-//    objc_getClassList(classes, count);
-//    for (NSUInteger i = 0; i < count; i ++) {
-//        if (assignClass == class_getSuperclass(classes[i])) {
-//            [subClassesArray addObject:classes[i]];
-//        }
-//    }
-//    free(classes);
-//    return subClassesArray;
-//}
-
 + (NSArray<Class> *)findSubClass {
     int count = objc_getClassList(NULL, 0);
     if (count <= 0) {
