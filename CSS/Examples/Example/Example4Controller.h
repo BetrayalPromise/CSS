@@ -21,11 +21,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-
-@interface UITableView (CellHeight)
-
-- (CGFloat)heightWithData:(NSString *)model identifier:(NSString *)identifier;
-
-@end
-
 NS_ASSUME_NONNULL_END

@@ -38,6 +38,7 @@
     [self.view addSubview:showTableView];
     showTableView.delegate = self;
     showTableView.dataSource = self;
+    showTableView.rowHeight = UITableViewAutomaticDimension;
     [showTableView registerReuseCellClass:[CustomCell class]];
     [showTableView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
@@ -58,10 +59,6 @@
 
 - (NSString *)textForShow {
     return @"的饭卡的飞机啊；放假看jo9得jo9见啊烤看jo9得见豆腐jo9看得见几啊看得jo9见风看jo9得见景3i-83u549-138看得见409看得见2n29320斤看法是的；开机哦怕 阿的江否34092394kajflakjfkjeeklq;rj看得见qe;kjr;lke看得见nfq看看得见得见k看得见eaj看得见rklqwejr-98看得见ujaodf看得见jowiufj看得见ipodfjasdfjo94ru看得见0c";
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [tableView heightWithData:_datas[indexPath.row] identifier:NSStringFromClass([CustomCell class])];
 }
 
 @end
@@ -88,33 +85,37 @@
         self->_label = source;
         source.numberOfLines = 0;
     }] attachTo:self.contentView];
-    [label configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
-        layout.isEnabled = YES;    
-    }];
-    
     [self.contentView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
-        layout.flexDirection = YGFlexDirectionCount;
-        layout.flexWrap = YGWrapWrap;
+        layout.width = YGPercentValue(100);
+        layout.maxWidth = YGPercentValue(100);
+        layout.flexDirection = YGFlexDirectionColumn;
+        layout.padding = YGPointValue(5);
+        layout.justifyContent = YGJustifyFlexStart;
+    }];
+    [label configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.flexGrow = 4;
+        layout.flexShrink = 1;
     }];
     [self.contentView.yoga applyLayoutPreservingOrigin:YES];
 }
 
 - (void)configure:(NSString *)text {
     _label.text = text;
-    [self.contentView.yoga applyLayoutPreservingOrigin:YES];
+    [_label sizeToFit];
+    [_label.yoga markDirty];
 }
 
-@end
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self.contentView.yoga applyLayoutPreservingOrigin:YES dimensionFlexibility:(YGDimensionFlexibilityFlexibleHeight)];
+    [super layoutSubviews];
+}
 
-@implementation UITableView (CellHeight)
-
-- (CGFloat)heightWithData:(NSString *)model identifier:(NSString *)identifier {
-    CustomCell * cell = [self dequeueReusableCellWithIdentifier:identifier];
-    [cell prepareForReuse];
-    [cell configure:model];
-    CGFloat height = cell.contentView.yoga.intrinsicSize.height;
-    return height;
+- (CGSize)sizeThatFits:(CGSize)size {
+    [self.contentView.yoga applyLayoutPreservingOrigin:YES dimensionFlexibility:(YGDimensionFlexibilityFlexibleHeight)];
+    return [self.contentView sizeThatFits:size];
 }
 
 @end
