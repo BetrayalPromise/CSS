@@ -1,10 +1,8 @@
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 #import "UIView+Yoga.h"
@@ -15,24 +13,27 @@ static const void *kYGYogaAssociatedKey = &kYGYogaAssociatedKey;
 
 @implementation UIView (YogaKit)
 
-- (YGLayout *)yoga {
-    YGLayout *yoga = objc_getAssociatedObject(self, kYGYogaAssociatedKey);
-    if (!yoga) {
-        yoga = [[YGLayout alloc] initWithView:self];
-        objc_setAssociatedObject(self, kYGYogaAssociatedKey, yoga, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
+- (YGLayout *)yoga
+{
+  YGLayout *yoga = objc_getAssociatedObject(self, kYGYogaAssociatedKey);
+  if (!yoga) {
+    yoga = [[YGLayout alloc] initWithView:self];
+    objc_setAssociatedObject(self, kYGYogaAssociatedKey, yoga, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  }
 
-    return yoga;
+  return yoga;
 }
 
-- (BOOL)isYogaEnabled {
-    return objc_getAssociatedObject(self, kYGYogaAssociatedKey) != nil;
+- (BOOL)isYogaEnabled
+{
+  return objc_getAssociatedObject(self, kYGYogaAssociatedKey) != nil;
 }
 
-- (void)configureLayoutWithBlock:(void (^)(YGLayout *layout))block {
-    if (block != nil) {
-        block(self.yoga);
-    }
+- (void)configureLayoutWithBlock:(YGLayoutConfigurationBlock)block
+{
+  if (block != nil) {
+    block(self.yoga);
+  }
 }
 
 @end

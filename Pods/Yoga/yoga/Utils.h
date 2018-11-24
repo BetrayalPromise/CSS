@@ -36,20 +36,20 @@
 // and/or grow.
 
 struct YGCollectFlexItemsRowValues {
-    uint32_t itemsOnLine;
-    float sizeConsumedOnCurrentLine;
-    float totalFlexGrowFactors;
-    float totalFlexShrinkScaledFactors;
-    float endOfLineIndex;
-    std::vector<YGNodeRef> relativeChildren;
-    float remainingFreeSpace;
-    // The size of the mainDim for the row after considering size, padding, margin
-    // and border of flex items. This is used to calculate maxLineDim after going
-    // through all the rows to decide on the main axis size of parent.
-    float mainDim;
-    // The size of the crossDim for the row after considering size, padding,
-    // margin and border of flex items. Used for calculating containers crossSize.
-    float crossDim;
+  uint32_t itemsOnLine;
+  float sizeConsumedOnCurrentLine;
+  float totalFlexGrowFactors;
+  float totalFlexShrinkScaledFactors;
+  uint32_t endOfLineIndex;
+  std::vector<YGNodeRef> relativeChildren;
+  float remainingFreeSpace;
+  // The size of the mainDim for the row after considering size, padding, margin
+  // and border of flex items. This is used to calculate maxLineDim after going
+  // through all the rows to decide on the main axis size of owner.
+  float mainDim;
+  // The size of the crossDim for the row after considering size, padding,
+  // margin and border of flex items. Used for calculating containers crossSize.
+  float crossDim;
 };
 
 bool YGValueEqual(const YGValue a, const YGValue b);
@@ -65,6 +65,10 @@ bool YGFloatsEqual(const float a, const float b);
 // compiler flag.
 float YGFloatMax(const float a, const float b);
 
+YGFloatOptional YGFloatOptionalMax(
+    const YGFloatOptional& op1,
+    const YGFloatOptional& op2);
+
 // We need custom min function, since we want that, if one argument is
 // YGUndefined then the min funtion should return the other argument as the min
 // value. We wouldn't have needed a custom min function if YGUndefined was NAN
@@ -75,49 +79,70 @@ float YGFloatMin(const float a, const float b);
 // This custom float comparision function compares the array of float with
 // YGFloatsEqual, as the default float comparision operator will not work(Look
 // at the comments of YGFloatsEqual function).
-template <std::size_t size> bool YGFloatArrayEqual(const std::array<float, size> &val1, const std::array<float, size> &val2) {
-    bool areEqual = true;
-    for (std::size_t i = 0; i < size && areEqual; ++i) {
-        areEqual = YGFloatsEqual(val1[i], val2[i]);
-    }
-    return areEqual;
+template <std::size_t size>
+bool YGFloatArrayEqual(
+    const std::array<float, size>& val1,
+    const std::array<float, size>& val2) {
+  bool areEqual = true;
+  for (std::size_t i = 0; i < size && areEqual; ++i) {
+    areEqual = YGFloatsEqual(val1[i], val2[i]);
+  }
+  return areEqual;
 }
 
-YGFlexDirection YGFlexDirectionCross(const YGFlexDirection flexDirection, const YGDirection direction);
+// This function returns 0 if YGFloatIsUndefined(val) is true and val otherwise
+float YGFloatSanitize(const float& val);
+
+// This function unwraps optional and returns YGUndefined if not defined or
+// op.value otherwise
+// TODO: Get rid off this function
+float YGUnwrapFloatOptional(const YGFloatOptional& op);
+
+YGFlexDirection YGFlexDirectionCross(
+    const YGFlexDirection flexDirection,
+    const YGDirection direction);
 
 inline bool YGFlexDirectionIsRow(const YGFlexDirection flexDirection) {
-    return flexDirection == YGFlexDirectionRow || flexDirection == YGFlexDirectionRowReverse;
+  return flexDirection == YGFlexDirectionRow ||
+      flexDirection == YGFlexDirectionRowReverse;
 }
 
-inline float YGResolveValue(const YGValue value, const float parentSize) {
-    switch (value.unit) {
-        case YGUnitUndefined:
-        case YGUnitAuto:
-            return YGUndefined;
-        case YGUnitPoint:
-            return value.value;
-        case YGUnitPercent:
-            return value.value * parentSize * 0.01;
-    }
-    return YGUndefined;
+inline YGFloatOptional YGResolveValue(const YGValue value, const float ownerSize) {
+  switch (value.unit) {
+    case YGUnitUndefined:
+    case YGUnitAuto:
+      return YGFloatOptional();
+    case YGUnitPoint:
+      return YGFloatOptional(value.value);
+    case YGUnitPercent:
+      return YGFloatOptional(
+          static_cast<float>(value.value * ownerSize * 0.01));
+  }
+  return YGFloatOptional();
 }
 
 inline bool YGFlexDirectionIsColumn(const YGFlexDirection flexDirection) {
-    return flexDirection == YGFlexDirectionColumn || flexDirection == YGFlexDirectionColumnReverse;
+  return flexDirection == YGFlexDirectionColumn ||
+      flexDirection == YGFlexDirectionColumnReverse;
 }
 
-inline YGFlexDirection YGResolveFlexDirection(const YGFlexDirection flexDirection, const YGDirection direction) {
-    if (direction == YGDirectionRTL) {
-        if (flexDirection == YGFlexDirectionRow) {
-            return YGFlexDirectionRowReverse;
-        } else if (flexDirection == YGFlexDirectionRowReverse) {
-            return YGFlexDirectionRow;
-        }
+inline YGFlexDirection YGResolveFlexDirection(
+    const YGFlexDirection flexDirection,
+    const YGDirection direction) {
+  if (direction == YGDirectionRTL) {
+    if (flexDirection == YGFlexDirectionRow) {
+      return YGFlexDirectionRowReverse;
+    } else if (flexDirection == YGFlexDirectionRowReverse) {
+      return YGFlexDirectionRow;
     }
+  }
 
-    return flexDirection;
+  return flexDirection;
 }
 
-static inline float YGResolveValueMargin(const YGValue value, const float parentSize) {
-    return value.unit == YGUnitAuto ? 0 : YGResolveValue(value, parentSize);
+static inline YGFloatOptional YGResolveValueMargin(
+    const YGValue value,
+    const float ownerSize) {
+  return value.unit == YGUnitAuto ? YGFloatOptional(0)
+                                  : YGResolveValue(value, ownerSize);
 }

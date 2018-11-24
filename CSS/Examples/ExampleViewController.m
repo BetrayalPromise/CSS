@@ -9,13 +9,13 @@
 #import "ExampleViewController.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
-#import "UILabelController.h"
-#import "UIButtonController.h"
-#import "UIImageViewController.h"
+#import "Example0Controller.h"
+#import "Example1Controller.h"
+#import "Example2Controller.h"
 
 @interface ExampleViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSArray <UIViewController *> * datas;
+@property (nonatomic, strong) NSArray <NSString *> * datas;
 
 @end
 
@@ -24,13 +24,7 @@
 - (void)loadView {
     [super loadView];
     
-    _datas = @[[[UILabelController new] objectThen:^(UILabelController * _Nonnull source) {
-        
-    }], [[UIButtonController new] objectThen:^(UIButtonController * _Nonnull source) {
-                   
-    }], [[UIImageViewController new] objectThen:^(UIButtonController * _Nonnull source) {
-        
-    }]];
+    _datas = @[@"安全区范围处理", @"标签的抗拉抗压属性处理"];
 }
 
 - (void)viewDidLoad {
@@ -62,12 +56,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:UITableViewCell.defaultReuseIdentifier];
-    cell.textLabel.text = NSStringFromClass([_datas[indexPath.row] class]);
+    cell.textLabel.text = _datas[indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self presentViewController:_datas[indexPath.row] animated:YES completion:nil];
+    if (indexPath.row == 0) {
+        [self.navigationController pushViewController:[Example0Controller new] animated:YES];
+    } else if (indexPath.row == 1) {
+        [self.navigationController pushViewController:[Example1Controller new] animated:YES];
+    } else if (indexPath.row == 2) {
+        [self.navigationController pushViewController:[Example2Controller new] animated:YES];
+    }
 }
 
 @end

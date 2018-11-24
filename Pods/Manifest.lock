@@ -1,6 +1,4 @@
 PODS:
-  - Aspects (1.4.1)
-  - MessageThrottle (1.2.2)
   - MessageTrash (0.0.1)
   - MineCommonUtils (1.0.0):
     - MessageTrash (~> 0.0.1)
@@ -59,33 +57,27 @@ PODS:
     - MessageTrash (~> 0.0.1)
   - MineCommonUtils/WidgetPosition (1.0.0):
     - MessageTrash (~> 0.0.1)
-  - Yoga (1.8.1)
-  - YogaKit (1.8.1):
-    - Yoga (~> 1.8.1)
+  - Yoga (1.9.0)
+  - YogaKit (1.9.0):
+    - Yoga (~> 1.9)
 
 DEPENDENCIES:
-  - Aspects
-  - MessageThrottle
   - MineCommonUtils
-  - YogaKit
+  - YogaKit (~> 1.9.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Aspects
-    - MessageThrottle
     - MessageTrash
     - MineCommonUtils
     - Yoga
     - YogaKit
 
 SPEC CHECKSUMS:
-  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  MessageThrottle: 2deddbe6246a9069794e52f2174fa96e03be8487
   MessageTrash: 7925feafd22318f4049253b8ed4a457517af1875
   MineCommonUtils: 458eb880650b4f98b619ba34bc8aeffa28fee55c
-  Yoga: e6f1fed82138c17da5332e15e5770abf0e9cc386
-  YogaKit: bb90d11e297e06abef7e0cfb20e035a6bd00cdc4
+  Yoga: aaae8abea68951f60bee05f6277d3eed90bb91bb
+  YogaKit: d447a9bb808718e6f58e52a2255a8050081a3ead
 
-PODFILE CHECKSUM: 3dc533a36241522ea3554a44946c76f8a7ba33f5
+PODFILE CHECKSUM: d11e7475926e924c087561af8c630a3578ce1be3
 
 COCOAPODS: 1.5.3

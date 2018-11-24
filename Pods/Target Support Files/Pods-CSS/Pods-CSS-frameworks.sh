@@ -143,16 +143,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MessageThrottle/MessageThrottle.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MessageTrash/MessageTrash.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MineCommonUtils/MineCommonUtils.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/MessageThrottle/MessageThrottle.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MessageTrash/MessageTrash.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MineCommonUtils/MineCommonUtils.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"

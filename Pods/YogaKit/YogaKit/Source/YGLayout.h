@@ -1,33 +1,41 @@
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
- * All rights reserved.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 #import <UIKit/UIKit.h>
 #import <yoga/YGEnums.h>
-#import <yoga/YGMacros.h>
 #import <yoga/Yoga.h>
+#import <yoga/YGMacros.h>
 
 YG_EXTERN_C_BEGIN
 
-extern YGValue YGPointValue(CGFloat value) NS_SWIFT_UNAVAILABLE("Use the swift Int and FloatingPoint extensions instead");
-extern YGValue YGPercentValue(CGFloat value) NS_SWIFT_UNAVAILABLE("Use the swift Int and FloatingPoint extensions instead");
+extern YGValue YGPointValue(CGFloat value)
+    NS_SWIFT_UNAVAILABLE("Use the swift Int and FloatingPoint extensions instead");
+extern YGValue YGPercentValue(CGFloat value)
+    NS_SWIFT_UNAVAILABLE("Use the swift Int and FloatingPoint extensions instead");
 
 YG_EXTERN_C_END
 
 typedef NS_OPTIONS(NSInteger, YGDimensionFlexibility) {
-    YGDimensionFlexibilityFlexibleWidth = 1 << 0,
-    YGDimensionFlexibilityFlexibleHeigth = 1 << 1,
+  YGDimensionFlexibilityFlexibleWidth = 1 << 0,
+  YGDimensionFlexibilityFlexibleHeight = 1 << 1,
 };
 
 @interface YGLayout : NSObject
 
 /**
-  The property that decides if we should include this view when calculating layout. Defaults to YES.
+ Make default init unavailable, as it will not initialise YGNode which is
+ required for the setters and getters of YGLayout's properties to work properly.
+*/
+- (instancetype)init
+    __attribute__((unavailable("you are not meant to initialise YGLayout")));
+
+/**
+  The property that decides if we should include this view when calculating
+  layout. Defaults to YES.
  */
 @property (nonatomic, readwrite, assign, setter=setIncludedInLayout:) BOOL isIncludedInLayout;
 
@@ -36,23 +44,19 @@ typedef NS_OPTIONS(NSInteger, YGDimensionFlexibility) {
  Defaults to NO.
  */
 @property (nonatomic, readwrite, assign, setter=setEnabled:) BOOL isEnabled;
-/// 语言系统默认方向
+/// 语言布局方向
 @property (nonatomic, readwrite, assign) YGDirection direction;
-/// 主轴排列方向
+
+/// 整体布局方向
 @property (nonatomic, readwrite, assign) YGFlexDirection flexDirection;
-/// 定义item在主轴上的对齐方式
+/// 主轴布局
 @property (nonatomic, readwrite, assign) YGJustify justifyContent;
-/// 定义item在侧轴上的对齐方式
 @property (nonatomic, readwrite, assign) YGAlign alignContent;
 @property (nonatomic, readwrite, assign) YGAlign alignItems;
 @property (nonatomic, readwrite, assign) YGAlign alignSelf;
 @property (nonatomic, readwrite, assign) YGPositionType position;
-
-///
 @property (nonatomic, readwrite, assign) YGWrap flexWrap;
 @property (nonatomic, readwrite, assign) YGOverflow overflow;
-
-/// 控制是否参会布局计算
 @property (nonatomic, readwrite, assign) YGDisplay display;
 
 @property (nonatomic, readwrite, assign) CGFloat flexGrow;
@@ -94,20 +98,14 @@ typedef NS_OPTIONS(NSInteger, YGDimensionFlexibility) {
 @property (nonatomic, readwrite, assign) CGFloat borderEndWidth;
 @property (nonatomic, readwrite, assign) CGFloat borderWidth;
 
-/// 指定宽度
 @property (nonatomic, readwrite, assign) YGValue width;
-/// 指定高度
 @property (nonatomic, readwrite, assign) YGValue height;
-/// 指定最小宽度
 @property (nonatomic, readwrite, assign) YGValue minWidth;
-/// 指定最小高度
 @property (nonatomic, readwrite, assign) YGValue minHeight;
-/// 指定最大宽度
 @property (nonatomic, readwrite, assign) YGValue maxWidth;
-/// 指定最大高度
 @property (nonatomic, readwrite, assign) YGValue maxHeight;
 
-/// Yoga specific properties, not compatible with flexbox specification
+// Yoga specific properties, not compatible with flexbox specification
 @property (nonatomic, readwrite, assign) CGFloat aspectRatio;
 
 /**
@@ -119,13 +117,16 @@ typedef NS_OPTIONS(NSInteger, YGDimensionFlexibility) {
  Perform a layout calculation and update the frames of the views in the hierarchy with the results.
  If the origin is not preserved, the root view's layout results will applied from {0,0}.
  */
-- (void)applyLayoutPreservingOrigin:(BOOL)preserveOrigin NS_SWIFT_NAME(applyLayout(preservingOrigin:));
+- (void)applyLayoutPreservingOrigin:(BOOL)preserveOrigin
+    NS_SWIFT_NAME(applyLayout(preservingOrigin:));
 
 /**
  Perform a layout calculation and update the frames of the views in the hierarchy with the results.
  If the origin is not preserved, the root view's layout results will applied from {0,0}.
  */
-- (void)applyLayoutPreservingOrigin:(BOOL)preserveOrigin dimensionFlexibility:(YGDimensionFlexibility)dimensionFlexibility NS_SWIFT_NAME(applyLayout(preservingOrigin:dimensionFlexibility:));
+- (void)applyLayoutPreservingOrigin:(BOOL)preserveOrigin
+               dimensionFlexibility:(YGDimensionFlexibility)dimensionFlexibility
+    NS_SWIFT_NAME(applyLayout(preservingOrigin:dimensionFlexibility:));
 
 /**
  Returns the size of the view if no constraints were given. This could equivalent to calling [self
@@ -136,7 +137,8 @@ typedef NS_OPTIONS(NSInteger, YGDimensionFlexibility) {
 /**
   Returns the size of the view based on provided constraints. Pass NaN for an unconstrained dimension.
  */
-- (CGSize)calculateLayoutWithSize:(CGSize)size NS_SWIFT_NAME(calculateLayout(with:));
+- (CGSize)calculateLayoutWithSize:(CGSize)size
+    NS_SWIFT_NAME(calculateLayout(with:));
 
 /**
  Returns the number of children that are using Flexbox.

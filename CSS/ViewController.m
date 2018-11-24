@@ -9,12 +9,10 @@
 #import "ViewController.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <objc/runtime.h>
-#import <Aspects/Aspects.h>
 #import "FlexContainerViewController.h"
 #import "FlexItemViewController.h"
 #import "NSString+ColorValue.h"
 #import "ExampleViewController.h"
-#import "MasonryViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -26,11 +24,7 @@
 
 - (void)loadView {
     [super loadView];
-    _datas = @[[FlexContainerViewController new], [FlexItemViewController new], [ExampleViewController new], [MasonryViewController new]];
-    
-    [self aspect_hookSelector:@selector(viewDidLoad) withOptions:(AspectPositionAfter) usingBlock:^{
-        NSLog(@"AAA");
-    } error:nil];
+    _datas = @[[FlexContainerViewController new], [FlexItemViewController new], [ExampleViewController new]];
 }
 
 - (void)viewDidLoad {
@@ -62,9 +56,7 @@
     if (indexPath.row == 0 || indexPath.row == 1) {
         cell.textLabel.text = [[NSString alloc] initWithCString:object_getClassName(_datas[indexPath.row]) encoding:NSUTF8StringEncoding];
     } else if (indexPath.row == 2) {
-        cell.textLabel.text = @"固有尺寸视图";
-    } else if (indexPath.row == 3) {
-        cell.textLabel.text = @"Masonry例子";
+        cell.textLabel.text = @"例子";
     }
     return cell;
 }
