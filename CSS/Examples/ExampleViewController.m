@@ -24,7 +24,7 @@
 - (void)loadView {
     [super loadView];
     
-    _datas = @[@"安全区范围处理", @"标签的抗拉抗压属性处理"];
+    _datas = @[@"安全区范围处理", @"标签的抗拉抗压属性处理", @"ABC"];
 }
 
 - (void)viewDidLoad {
