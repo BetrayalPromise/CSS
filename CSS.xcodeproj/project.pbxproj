@@ -31,6 +31,7 @@
 		118631F020BE4E5800C75431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118631EE20BE4E5800C75431 /* LaunchScreen.storyboard */; };
 		118631F320BE4E5800C75431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 118631F220BE4E5800C75431 /* main.m */; };
 		118631FE20BFE21800C75431 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118631FD20BFE21800C75431 /* CFNetwork.framework */; };
+		6FA7A83221AD7B4F008DB340 /* Example8Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA7A83121AD7B4F008DB340 /* Example8Controller.m */; };
 		B892AED70504B7C67F2819FF /* Pods_CSS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E35AC8A68FE56231E5BA8E /* Pods_CSS.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,8 @@
 		118631F120BE4E5800C75431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		118631F220BE4E5800C75431 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		118631FD20BFE21800C75431 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6FA7A83021AD7B4F008DB340 /* Example8Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example8Controller.h; sourceTree = "<group>"; };
+		6FA7A83121AD7B4F008DB340 /* Example8Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example8Controller.m; sourceTree = "<group>"; };
 		B7E35AC8A68FE56231E5BA8E /* Pods_CSS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C398846999F49017D3318485 /* Pods-CSS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSS/Pods-CSS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +181,8 @@
 				04FE4438218AFFA300FCC692 /* Example6Controller.m */,
 				04B4121821AD41DA00061FD2 /* Example7Controller.h */,
 				04B4121921AD41DA00061FD2 /* Example7Controller.m */,
+				6FA7A83021AD7B4F008DB340 /* Example8Controller.h */,
+				6FA7A83121AD7B4F008DB340 /* Example8Controller.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 				11120C6320D2716D00D39DD4 /* FlexWrapViewController.m in Sources */,
 				04B4121A21AD41DA00061FD2 /* Example7Controller.m in Sources */,
 				11542E8A212435AB00BAAB89 /* Example1Controller.m in Sources */,
+				6FA7A83221AD7B4F008DB340 /* Example8Controller.m in Sources */,
 				118631F320BE4E5800C75431 /* main.m in Sources */,
 				04CB2D07218BEDE10034F057 /* Example5Controller.m in Sources */,
 				118631E520BE4E5700C75431 /* AppDelegate.m in Sources */,
