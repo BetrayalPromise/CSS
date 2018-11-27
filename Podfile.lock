@@ -53,6 +53,7 @@ PODS:
   - MineCommonUtils/TypeEnsure (1.1.4)
   - MineCommonUtils/WidgetPosition (1.1.4)
   - Reveal-SDK (18)
+  - WatchdogInspector (1.3.0)
   - Yoga (1.9.0)
   - YogaKit (1.9.0):
     - Yoga (~> 1.9)
@@ -60,21 +61,24 @@ PODS:
 DEPENDENCIES:
   - MineCommonUtils (~> 1.1.4)
   - Reveal-SDK (~> 18)
+  - WatchdogInspector
   - YogaKit (~> 1.9.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - MineCommonUtils
     - Reveal-SDK
+    - WatchdogInspector
     - Yoga
     - YogaKit
 
 SPEC CHECKSUMS:
   MineCommonUtils: b843df2aac66d9b42a133550425246bad92151be
   Reveal-SDK: cce79388da3fd0bbb6ae19d769b906cfc3a33a89
+  WatchdogInspector: 439a73b047028a6048a59e56b70fcf11045a6e13
   Yoga: aaae8abea68951f60bee05f6277d3eed90bb91bb
   YogaKit: d447a9bb808718e6f58e52a2255a8050081a3ead
 
-PODFILE CHECKSUM: e70831f1ed6594cd54252c9e0ff616b89688b98f
+PODFILE CHECKSUM: d72a5fcccdad78753889341aee4a573f03a0a73d
 
 COCOAPODS: 1.5.3

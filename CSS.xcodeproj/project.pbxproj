@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0408BB9521AB9D8400C9050C /* Example3Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408BB9421AB9D8400C9050C /* Example3Controller.m */; };
+		04CB2D07218BEDE10034F057 /* Example5Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CB2D06218BEDE10034F057 /* Example5Controller.m */; };
 		04FE4439218AFFA300FCC692 /* Example4Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FE4438218AFFA300FCC692 /* Example4Controller.m */; };
 		11120C5420D24C3F00D39DD4 /* FlexContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11120C5320D24C3F00D39DD4 /* FlexContainerViewController.m */; };
 		11120C5720D24C5200D39DD4 /* FlexItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11120C5620D24C5200D39DD4 /* FlexItemViewController.m */; };
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		0408BB9321AB9D8400C9050C /* Example3Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example3Controller.h; sourceTree = "<group>"; };
 		0408BB9421AB9D8400C9050C /* Example3Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example3Controller.m; sourceTree = "<group>"; };
+		04CB2D05218BEDE10034F057 /* Example5Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example5Controller.h; sourceTree = "<group>"; };
+		04CB2D06218BEDE10034F057 /* Example5Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example5Controller.m; sourceTree = "<group>"; };
 		04FE4437218AFFA300FCC692 /* Example4Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example4Controller.h; sourceTree = "<group>"; };
 		04FE4438218AFFA300FCC692 /* Example4Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example4Controller.m; sourceTree = "<group>"; };
 		0FB6FC4AF453DD4009FF9733 /* Pods-CSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSS/Pods-CSS.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				0408BB9421AB9D8400C9050C /* Example3Controller.m */,
 				04FE4437218AFFA300FCC692 /* Example4Controller.h */,
 				04FE4438218AFFA300FCC692 /* Example4Controller.m */,
+				04CB2D05218BEDE10034F057 /* Example5Controller.h */,
+				04CB2D06218BEDE10034F057 /* Example5Controller.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CSS/Pods-CSS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MineCommonUtils/MineCommonUtils.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework",
+				"${BUILT_PRODUCTS_DIR}/WatchdogInspector/WatchdogInspector.framework",
 				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
 				"${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework",
 			);
@@ -352,6 +358,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MineCommonUtils.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WatchdogInspector.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YogaKit.framework",
 			);
@@ -383,6 +390,7 @@
 				11120C6320D2716D00D39DD4 /* FlexWrapViewController.m in Sources */,
 				11542E8A212435AB00BAAB89 /* Example1Controller.m in Sources */,
 				118631F320BE4E5800C75431 /* main.m in Sources */,
+				04CB2D07218BEDE10034F057 /* Example5Controller.m in Sources */,
 				118631E520BE4E5700C75431 /* AppDelegate.m in Sources */,
 				04FE4439218AFFA300FCC692 /* Example4Controller.m in Sources */,
 			);
