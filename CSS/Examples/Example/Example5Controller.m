@@ -108,7 +108,6 @@
     _label.text = text;
     [_label sizeToFit];
     [_label.yoga markDirty];
-    [self.contentView.yoga applyLayoutPreservingOrigin:YES];
 }
 
 - (void)layoutSubviews {

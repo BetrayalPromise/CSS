@@ -14,4 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+@interface CustomCell : UITableViewCell
+
+- (void)configure:(NSString *)text;
+
+@end
+
 NS_ASSUME_NONNULL_END

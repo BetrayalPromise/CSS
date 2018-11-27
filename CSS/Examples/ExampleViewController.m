@@ -16,6 +16,7 @@
 #import "Example4Controller.h"
 #import "Example5Controller.h"
 #import "Example6Controller.h"
+#import "Example7Controller.h"
 
 @interface ExampleViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -28,7 +29,7 @@
 - (void)loadView {
     [super loadView];
     
-    _datas = @[@"安全区范围处理", @"标签的抗拉抗压属性处理", @"标签布局例子0", @"标签布局例子1", @"cell布局不指定高度", @"cell布局指定高度", @"中心"];
+    _datas = @[@"安全区范围处理", @"标签的抗拉抗压属性处理", @"标签布局例子0", @"标签布局例子1", @"中心", @"cell布局不指定高度", @"cell布局指定高度"];
 }
 
 - (void)viewDidLoad {
@@ -65,21 +66,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        [self.navigationController pushViewController:[Example0Controller new] animated:YES];
-    } else if (indexPath.row == 1) {
-        [self.navigationController pushViewController:[Example1Controller new] animated:YES];
-    } else if (indexPath.row == 2) {
-        [self.navigationController pushViewController:[Example2Controller new] animated:YES];
-    } else if (indexPath.row == 3) {
-        [self.navigationController pushViewController:[Example3Controller new] animated:YES];
-    } else if (indexPath.row == 4) {
-        [self.navigationController pushViewController:[Example4Controller new] animated:YES];
-    } else if (indexPath.row == 5) {
-        [self.navigationController pushViewController:[Example5Controller new] animated:YES];
-    } else if (indexPath.row == 6) {
-        [self.navigationController pushViewController:[Example6Controller new] animated:YES];
-    }
+    Class className = NSClassFromString([NSString stringWithFormat:@"Example%ldController", (long)indexPath.row]);
+    [self.navigationController pushViewController:[className new] animated:YES];
 }
 
 @end
