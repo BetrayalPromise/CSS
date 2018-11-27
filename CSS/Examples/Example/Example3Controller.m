@@ -53,6 +53,7 @@
     textLabel.text = [[self textForShow] substringFromIndex:arc4random() % ([self textForShow].length - 1)];
     [textLabel configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
+        layout.width = contentView.yoga.width;
     }];
     [self.view.yoga applyLayoutPreservingOrigin:YES];
     
