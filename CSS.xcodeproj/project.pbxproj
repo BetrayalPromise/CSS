@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0408BB9521AB9D8400C9050C /* Example3Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408BB9421AB9D8400C9050C /* Example3Controller.m */; };
+		04B4121721AD0B9800061FD2 /* Example6Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4121621AD0B9800061FD2 /* Example6Controller.m */; };
 		04CB2D07218BEDE10034F057 /* Example5Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CB2D06218BEDE10034F057 /* Example5Controller.m */; };
 		04FE4439218AFFA300FCC692 /* Example4Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FE4438218AFFA300FCC692 /* Example4Controller.m */; };
 		11120C5420D24C3F00D39DD4 /* FlexContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11120C5320D24C3F00D39DD4 /* FlexContainerViewController.m */; };
@@ -35,6 +36,8 @@
 /* Begin PBXFileReference section */
 		0408BB9321AB9D8400C9050C /* Example3Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example3Controller.h; sourceTree = "<group>"; };
 		0408BB9421AB9D8400C9050C /* Example3Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example3Controller.m; sourceTree = "<group>"; };
+		04B4121521AD0B9800061FD2 /* Example6Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example6Controller.h; sourceTree = "<group>"; };
+		04B4121621AD0B9800061FD2 /* Example6Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example6Controller.m; sourceTree = "<group>"; };
 		04CB2D05218BEDE10034F057 /* Example5Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example5Controller.h; sourceTree = "<group>"; };
 		04CB2D06218BEDE10034F057 /* Example5Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example5Controller.m; sourceTree = "<group>"; };
 		04FE4437218AFFA300FCC692 /* Example4Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example4Controller.h; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				04FE4438218AFFA300FCC692 /* Example4Controller.m */,
 				04CB2D05218BEDE10034F057 /* Example5Controller.h */,
 				04CB2D06218BEDE10034F057 /* Example5Controller.m */,
+				04B4121521AD0B9800061FD2 /* Example6Controller.h */,
+				04B4121621AD0B9800061FD2 /* Example6Controller.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -349,7 +354,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CSS/Pods-CSS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MineCommonUtils/MineCommonUtils.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-18/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/WatchdogInspector/WatchdogInspector.framework",
 				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
 				"${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework",
@@ -357,7 +361,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MineCommonUtils.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WatchdogInspector.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YogaKit.framework",
@@ -375,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0408BB9521AB9D8400C9050C /* Example3Controller.m in Sources */,
+				04B4121721AD0B9800061FD2 /* Example6Controller.m in Sources */,
 				11120C5420D24C3F00D39DD4 /* FlexContainerViewController.m in Sources */,
 				11641F2B20D2C868003DF2A6 /* FlexShrinkViewController.m in Sources */,
 				11542E862124310E00BAAB89 /* ExampleViewController.m in Sources */,

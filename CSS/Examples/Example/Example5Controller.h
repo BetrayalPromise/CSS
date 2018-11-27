@@ -14,4 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface CustomHeightCell : UITableViewCell
+
+@property (nonatomic, strong) UILabel * label;
+- (void)configure:(NSString *)text;
+
+@end
+
+@interface UITableView (TemplateCell)
+- (CGFloat)heightForData:(id)model cellIdentifier:(NSString *)identifier;
+@end
+
 NS_ASSUME_NONNULL_END

@@ -11,8 +11,8 @@
 #import <YogaKit/UIView+Yoga.h>
 #import "UIColor+Random.h"
 
-@interface Example5Controller ()
-
+@interface Example5Controller () <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) NSMutableArray <NSString *> * datas;
 @end
 
 @implementation Example5Controller
@@ -22,6 +22,11 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
     
+    _datas = [NSMutableArray array];
+    for (NSInteger i = 0; i < 500; i ++) {
+        [_datas addObject:[[self textForShow] substringWithRange:NSMakeRange(0, arc4random() % ([self textForShow].length - 1))]];
+    }
+    
     self.title = @"居中";
     UIEdgeInsets edge = controllerSafeInset(SafeAreaScopeNavigationBar, nil);
     [self.view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
@@ -30,27 +35,99 @@
         layout.paddingLeft = YGPointValue(edge.left);
         layout.paddingBottom = YGPointValue(edge.bottom);
         layout.paddingRight = YGPointValue(edge.right);
-        layout.justifyContent = YGJustifyCenter;
-        layout.alignItems = YGAlignCenter;
-        if (arc4random() % 2 == 0) {
-            layout.flexDirection = YGFlexDirectionRow;
-        } else {
-            layout.flexDirection = YGFlexDirectionColumn;
-        }
     }];
     
-    for (NSUInteger i = 0; i < 20; i ++) {
-        UIView * centerView = [[[[UIView alloc] initWithFrame:CGRectZero] objectThen:^(UIView *  _Nonnull source) {
-            source.backgroundColor = [UIColor randomColor];
-        }] attachTo:self.view];
-        [centerView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
-            layout.isEnabled = YES;
-            layout.width = YGPointValue(20);
-            layout.height = YGPointValue(20);
-        }];
-    }
-    
+    /// 显示的表格视图
+    UITableView * showTableView = [[UITableView alloc] initWithFrame:CGRectZero style:(UITableViewStylePlain)];
+    [self.view addSubview:showTableView];
+    showTableView.delegate = self;
+    showTableView.dataSource = self;
+//    showTableView.rowHeight = UITableViewAutomaticDimension;
+    showTableView.estimatedRowHeight = 0;
+    [showTableView registerReuseCellClass:[CustomHeightCell class]];
+    [showTableView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.flexGrow = 1.0;
+    }];
     [self.view.yoga applyLayoutPreservingOrigin:YES];
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    CustomHeightCell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CustomHeightCell class])];
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 100;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [tableView heightForData:_datas[indexPath.row] cellIdentifier:NSStringFromClass([CustomHeightCell class])];
+}
+
+- (NSString *)textForShow {
+    return @"的饭卡的飞机啊；放假看jo9得jo9见啊烤看jo9得见豆腐jo9看得见几啊看得jo9见风看jo9得见景3i-83u549-138看得见409看得见2n29320斤看法是的；开机哦怕 阿的江否34092394kajflakjfkjeeklq;rj看得见qe;kjr;lke看得见nfq看看得见得见k看得见eaj看得见rklqwejr-98看得见ujaodf看得见jowiufj看得见ipodfjasdfjo94ru看得见0c";
+}
+
+@end
+
+
+@implementation CustomHeightCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self createUserInterface];
+    }
+    return self;
+}
+
+- (void)createUserInterface {
+    UILabel * label = [[[[UILabel alloc] initWithFrame:CGRectZero] objectThen:^(UILabel *_Nonnull source) {
+        source.backgroundColor = UIColor.randomColor;
+        source.numberOfLines = 0;
+        source.text = @"10JQKA";
+    }] attachTo:self.contentView];
+    self.label = label;
+    [self.contentView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.flexDirection = YGFlexDirectionColumn;
+        layout.flexWrap = YGWrapWrap;
+        layout.width = YGPointValue([UIScreen mainScreen].bounds.size.width);
+    }];
+    [self.contentView.yoga applyLayoutPreservingOrigin:YES];
+}
+
+- (void)configure:(NSString *)text {
+    _label.text = text;
+    [self.contentView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.flexDirection = YGFlexDirectionColumn;
+        layout.flexWrap = YGWrapWrap;
+        layout.width = YGPointValue([UIScreen mainScreen].bounds.size.width);
+    }];
+    [_label configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.flexGrow = 4;
+        layout.flexShrink = 4;
+        layout.width = YGPointValue([UIScreen mainScreen].bounds.size.width);
+    }];
+
+    [_label.yoga markDirty];
+    //    [_label.yoga applyLayoutPreservingOrigin:YES];
+    [self.contentView.yoga applyLayoutPreservingOrigin:YES];
+}
+
+@end
+
+@implementation  UITableView (TemplateCell)
+
+- (CGFloat)heightForData:(id)model cellIdentifier:(NSString *)identifier {
+    CustomHeightCell *cell = [self dequeueReusableCellWithIdentifier:identifier];
+    [cell prepareForReuse];
+    [cell configure:model];
+    CGFloat height = cell.contentView.yoga.intrinsicSize.height;
+    return height;
 }
 
 @end

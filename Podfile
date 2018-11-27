@@ -7,6 +7,5 @@ target 'CSS' do
 
 	pod 'YogaKit', '~> 1.9.0'
     pod 'MineCommonUtils', '~> 1.1.4'
-    pod 'Reveal-SDK', '~> 18'
-    pod "WatchdogInspector"
+    pod 'WatchdogInspector'
 end

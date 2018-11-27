@@ -54,6 +54,7 @@
     [textLabel configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
         layout.width = contentView.yoga.width;
+        layout.maxWidth = YGPointValue([UIScreen mainScreen].bounds.size.width);
     }];
     [self.view.yoga applyLayoutPreservingOrigin:YES];
     
@@ -71,7 +72,7 @@
 - (void)handleButtonEvent:(UIButton *)button {
     _textLabel.text = [[self textForShow] substringFromIndex:arc4random() % ([self textForShow].length - 1)];
     [_textLabel.yoga markDirty];
-    [_textLabel.yoga applyLayoutPreservingOrigin:YES dimensionFlexibility:(YGDimensionFlexibilityFlexibleHeight)];
+    [_textLabel.yoga applyLayoutPreservingOrigin:YES dimensionFlexibility:(YGDimensionFlexibilityFlexibleWidth)];
 }
 
 @end

@@ -115,7 +115,8 @@
 
 - (CGSize)sizeThatFits:(CGSize)size {
     [self.contentView.yoga applyLayoutPreservingOrigin:YES dimensionFlexibility:(YGDimensionFlexibilityFlexibleHeight)];
-    return [self.contentView sizeThatFits:size];
+    CGSize showSize = [self.contentView sizeThatFits:size];
+    return showSize;
 }
 
 @end
