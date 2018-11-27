@@ -42,8 +42,8 @@
     [self.view addSubview:showTableView];
     showTableView.delegate = self;
     showTableView.dataSource = self;
-//    showTableView.rowHeight = UITableViewAutomaticDimension;
     showTableView.estimatedRowHeight = 0;
+    showTableView.tableFooterView = [UIView new];
     [showTableView registerReuseCellClass:[CustomHeightCell class]];
     [showTableView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
@@ -54,6 +54,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CustomHeightCell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CustomHeightCell class])];
+    [cell configure:_datas[indexPath.row]];
     return cell;
 }
 
@@ -93,29 +94,26 @@
         layout.isEnabled = YES;
         layout.flexDirection = YGFlexDirectionColumn;
         layout.flexWrap = YGWrapWrap;
-        layout.width = YGPointValue([UIScreen mainScreen].bounds.size.width);
+        layout.width = YGPointValue([UIScreen mainScreen].bounds.size.width);        
+        layout.padding = YGPointValue(5);
     }];
-    [self.contentView.yoga applyLayoutPreservingOrigin:YES];
+    [self.label configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.flexGrow = 1;
+        layout.flexShrink = 1;
+    }];
 }
 
 - (void)configure:(NSString *)text {
     _label.text = text;
-    [self.contentView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
-        layout.isEnabled = YES;
-        layout.flexDirection = YGFlexDirectionColumn;
-        layout.flexWrap = YGWrapWrap;
-        layout.width = YGPointValue([UIScreen mainScreen].bounds.size.width);
-    }];
-    [_label configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
-        layout.isEnabled = YES;
-        layout.flexGrow = 4;
-        layout.flexShrink = 4;
-        layout.width = YGPointValue([UIScreen mainScreen].bounds.size.width);
-    }];
-
+    [_label sizeToFit];
     [_label.yoga markDirty];
-    //    [_label.yoga applyLayoutPreservingOrigin:YES];
     [self.contentView.yoga applyLayoutPreservingOrigin:YES];
+}
+
+- (void)layoutSubviews {
+    [self.contentView.yoga applyLayoutPreservingOrigin:YES dimensionFlexibility:(YGDimensionFlexibilityFlexibleHeight)];
+    [super layoutSubviews];
 }
 
 @end
