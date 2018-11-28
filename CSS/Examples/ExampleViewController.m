@@ -9,15 +9,6 @@
 #import "ExampleViewController.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
-#import "Example0Controller.h"
-#import "Example1Controller.h"
-#import "Example2Controller.h"
-#import "Example3Controller.h"
-#import "Example4Controller.h"
-#import "Example5Controller.h"
-#import "Example6Controller.h"
-#import "Example7Controller.h"
-#import "Example8Controller.h"
 
 @interface ExampleViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -30,7 +21,7 @@
 - (void)loadView {
     [super loadView];
     
-    _datas = @[@"安全区范围处理", @"标签的抗拉抗压属性处理", @"标签布局例子0", @"标签布局例子1", @"中心", @"cell布局不指定高度", @"cell布局指定高度", @"自定义空间自尺寸", @"标签排列布局", @"FlexShrink"];
+    _datas = @[@"安全区范围处理", @"标签的抗拉抗压属性处理", @"标签布局例子0", @"标签布局例子1", @"中心", @"cell布局不指定高度", @"cell布局指定高度", @"自定义空间自尺寸", @"标签排列布局", @"FlexShrink", @"UICollectionView"];
 }
 
 - (void)viewDidLoad {
