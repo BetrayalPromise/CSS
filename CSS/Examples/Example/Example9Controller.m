@@ -13,6 +13,8 @@
 
 @interface Example9Controller ()
 
+@property (nonatomic, strong) UILabel * textLabel;
+
 @end
 
 @implementation Example9Controller
@@ -60,7 +62,8 @@
     }];
     
     UILabel * textLabel = [[[UILabel alloc] initWithFrame:CGRectZero] objectThen:^(__kindof UILabel * _Nonnull source) {
-        source.text = @"这是一个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的文字";
+        self.textLabel = source;
+        self.textLabel.text = [[self showText] substringToIndex:arc4random() % ([self showText].length - 1)];
         source.font = [UIFont systemFontOfSize:30];
         source.numberOfLines = 0;
         source.backgroundColor = [UIColor randomColor];
@@ -72,6 +75,25 @@
     
     [self.view.yoga applyLayoutPreservingOrigin:YES];
     
+    
+    UIButton * button = [[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 50)] objectThen:^(__kindof UIButton * _Nonnull source) {
+        source.backgroundColor = [UIColor redColor];
+    } attachTo:self.view];
+    [button addTarget:self action:@selector(handleButtonEvent:) forControlEvents:(UIControlEventTouchUpInside)];
+    button.center = self.view.center;
+}
+
+- (void)handleButtonEvent:(UIButton *)button {
+    [self.textLabel.yoga markDirty];
+    self.textLabel.text = [[self showText] substringToIndex:arc4random() % ([self showText].length - 1)];
+    [self.view.yoga applyLayoutPreservingOrigin:YES];
+    
+    button.widgetSize = CGSizeMake(100, 50);
+    button.widgetMiddle = self.view.center;
+}
+
+- (NSString *)showText {
+    return @"这是一个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的文字";
 }
 
 @end
