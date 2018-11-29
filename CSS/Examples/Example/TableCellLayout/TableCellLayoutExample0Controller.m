@@ -106,7 +106,6 @@
 
 - (void)configure:(NSString *)text {
     _label.text = text;
-    [_label sizeToFit];
     [_label.yoga markDirty];
 }
 
