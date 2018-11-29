@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _datas = @[@"UITableViewCell指定行高", @"UITableViewCell不指定行高"];
+    _datas = @[@"Cell高度处理第1种方式", @"Cell高度处理第2种方式", @"Cell高度处理第3种方式"];
     
     
     UIEdgeInsets edge = controllerSafeInset(SafeAreaScopeNavigationBar, nil);

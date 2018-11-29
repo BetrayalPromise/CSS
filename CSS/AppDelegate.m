@@ -20,7 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    [TWWatchdogInspector start];
+//    [TWWatchdogInspector start];
 
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
     return YES;

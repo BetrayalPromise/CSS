@@ -44,7 +44,7 @@
     showTableView.dataSource = self;
     showTableView.estimatedRowHeight = 0;
     showTableView.tableFooterView = [UIView new];
-    [showTableView registerReuseCellClass:[CustomHeightCell class]];
+    [showTableView registerReuseCellClass:[Custom0Cell class]];
     [showTableView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
         layout.flexGrow = 1.0;
@@ -53,7 +53,7 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    CustomHeightCell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CustomHeightCell class])];
+    Custom0Cell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([Custom0Cell class])];
     [cell configure:_datas[indexPath.row]];
     return cell;
 }
@@ -63,7 +63,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [tableView heightForData:_datas[indexPath.row] cellIdentifier:NSStringFromClass([CustomHeightCell class])];
+    return [tableView heightForData:_datas[indexPath.row] cellIdentifier:NSStringFromClass([Custom0Cell class])];
 }
 
 - (NSString *)textForShow {
@@ -73,7 +73,7 @@
 @end
 
 
-@implementation CustomHeightCell
+@implementation Custom0Cell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -120,7 +120,7 @@
 @implementation  UITableView (TemplateCell)
 
 - (CGFloat)heightForData:(id)model cellIdentifier:(NSString *)identifier {
-    CustomHeightCell *cell = [self dequeueReusableCellWithIdentifier:identifier];
+    Custom0Cell *cell = [self dequeueReusableCellWithIdentifier:identifier];
     [cell prepareForReuse];
     [cell configure:model];
     CGFloat height = cell.contentView.yoga.intrinsicSize.height;

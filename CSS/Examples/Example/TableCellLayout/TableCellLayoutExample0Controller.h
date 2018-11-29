@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface CustomHeightCell : UITableViewCell
+@interface Custom0Cell : UITableViewCell
 
 @property (nonatomic, strong) UILabel * label;
 - (void)configure:(NSString *)text;
