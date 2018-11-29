@@ -1,8 +1,8 @@
 //
-//  Example4Controller.h
+//  CellLayoutViewController.h
 //  CSS
 //
-//  Created by mac on 2018/11/1.
+//  Created by mac on 2018/11/29.
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Example4Controller : UIViewController
+@interface TableCellLayoutViewController : UIViewController
 
 @end
 

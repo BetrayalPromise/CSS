@@ -1,28 +1,28 @@
 //
-//  ViewLayoutViewController.m
+//  CellLayoutViewController.m
 //  CSS
 //
 //  Created by mac on 2018/11/29.
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
-#import "ViewLayoutViewController.h"
+#import "TableCellLayoutViewController.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
 
-
-@interface ViewLayoutViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface TableCellLayoutViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray <NSString *> * datas;
 
 @end
 
-@implementation ViewLayoutViewController
+@implementation TableCellLayoutViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _datas = @[@"抗拉抗压", @"安全区", @"嵌套层级", @"包裹布局", @"居中排布", @"自尺寸", @"流式布局", @"布局更新"];
+    _datas = @[@"UITableViewCell指定行高", @"UITableViewCell不指定行高"];
+    
     
     UIEdgeInsets edge = controllerSafeInset(SafeAreaScopeNavigationBar, nil);
     [self.view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
@@ -36,6 +36,7 @@
     [self.view addSubview:tableView];
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.isOpenDebug = YES;
     [tableView registerReuseCellClass:[UITableViewCell class]];
     [tableView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
@@ -55,7 +56,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Class currentClass = NSClassFromString([NSString stringWithFormat:@"ViewLayoutExample%ldController", (long)indexPath.row]);
+    Class currentClass = NSClassFromString([NSString stringWithFormat:@"TableCellLayoutExample%ldController", (long)indexPath.row]);
     [self.navigationController pushViewController:[currentClass new] animated:YES];
 }
 

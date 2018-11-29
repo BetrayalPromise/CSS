@@ -6,15 +6,15 @@
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
-#import "Example1Controller.h"
+#import "ViewLayoutExample0Controller.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
 
-@interface Example1Controller ()
+@interface ViewLayoutExample0Controller ()
 
 @end
 
-@implementation Example1Controller
+@implementation ViewLayoutExample0Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];

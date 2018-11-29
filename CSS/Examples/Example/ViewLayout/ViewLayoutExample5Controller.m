@@ -1,48 +1,52 @@
 //
-//  Example0ViewController.m
+//  Example7Controller.m
 //  CSS
 //
-//  Created by LiChunYang on 31/7/2018.
+//  Created by mac on 2018/11/27.
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
-#import "Example0Controller.h"
+#import "ViewLayoutExample5Controller.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
+#import "UIColor+Random.h"
 
-@interface Example0Controller ()
+@interface ViewLayoutExample5Controller ()
 
 @end
 
-@implementation Example0Controller
+@implementation ViewLayoutExample5Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"重写UIView的intrinsicContentSize属性";
+
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.title = @"安全区处理";
     UIEdgeInsets edge = controllerSafeInset(SafeAreaScopeNavigationBar, nil);
-
+    
     [self.view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
         layout.paddingTop = YGPointValue(edge.top);
         layout.paddingLeft = YGPointValue(edge.left);
         layout.paddingBottom = YGPointValue(edge.bottom);
         layout.paddingRight = YGPointValue(edge.right);
+        layout.justifyContent = YGJustifyCenter;
+        layout.alignItems = YGAlignCenter;
     }];
-
-    UIView * contentView = [[[UIView alloc] initWithFrame:CGRectZero] attachTo:self.view];
-    contentView.backgroundColor = [UIColor redColor];
-    [contentView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+    
+    
+    UILabel * l = [[UILabel alloc] initWithFrame:CGRectZero];
+    l.text = @"dfafafadfad";
+    l.textAlignment = NSTextAlignmentCenter;
+    l.backgroundColor = [UIColor redColor];
+    [self.view addSubview:l];
+    
+    [l configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
-        layout.flexGrow = 1.0;
-        layout.flexDirection = YGFlexDirectionRow;
-        layout.flexWrap = YGWrapWrap;
-        layout.justifyContent = YGJustifyFlexStart;
-        layout.alignItems = YGAlignFlexStart;
-        layout.alignContent = YGAlignFlexStart;
+        layout.borderWidth = 10;
     }];
     [self.view.yoga applyLayoutPreservingOrigin:YES];
 }
-
 @end

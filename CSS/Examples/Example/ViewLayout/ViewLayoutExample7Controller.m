@@ -6,18 +6,18 @@
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
-#import "Example9Controller.h"
+#import "ViewLayoutExample7Controller.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
 #import "UIColor+Random.h"
 
-@interface Example9Controller ()
+@interface ViewLayoutExample7Controller ()
 
 @property (nonatomic, strong) UILabel * textLabel;
 
 @end
 
-@implementation Example9Controller
+@implementation ViewLayoutExample7Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -78,6 +78,7 @@
     
     UIButton * button = [[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 50)] objectThen:^(__kindof UIButton * _Nonnull source) {
         source.backgroundColor = [UIColor redColor];
+        [source setTitle:@"点一点" forState:(UIControlStateNormal)];
     } attachTo:self.view];
     [button addTarget:self action:@selector(handleButtonEvent:) forControlEvents:(UIControlEventTouchUpInside)];
     button.center = self.view.center;

@@ -6,16 +6,16 @@
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
-#import "Example8Controller.h"
+#import "ViewLayoutExample6Controller.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
 #import "UIColor+Random.h"
 
-@interface Example8Controller ()
+@interface ViewLayoutExample6Controller ()
 
 @end
 
-@implementation Example8Controller
+@implementation ViewLayoutExample6Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];

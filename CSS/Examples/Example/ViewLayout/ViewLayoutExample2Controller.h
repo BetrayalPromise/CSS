@@ -7,6 +7,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Example2Controller : UIViewController
+@interface ViewLayoutExample2Controller : UIViewController
 
 @end

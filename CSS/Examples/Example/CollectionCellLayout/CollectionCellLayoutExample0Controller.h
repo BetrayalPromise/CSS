@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Example10Controller : UIViewController
+@interface CollectionCellLayoutExample0Controller : UIViewController
 
 @end
 

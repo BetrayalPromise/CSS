@@ -6,18 +6,18 @@
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
-#import "Example3Controller.h"
+#import "ViewLayoutExample3Controller.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
 #import "UIColor+Random.h"
 
-@interface Example3Controller ()
+@interface ViewLayoutExample3Controller ()
 
 @property (nonatomic, strong) UILabel * textLabel;
 
 @end
 
-@implementation Example3Controller
+@implementation ViewLayoutExample3Controller
 
 
 - (void)viewDidLoad {
@@ -32,6 +32,7 @@
         layout.paddingBottom = YGPointValue(edge.bottom);
         layout.paddingRight = YGPointValue(edge.right);
         layout.flexDirection = YGFlexDirectionColumn;
+        layout.justifyContent = YGJustifyCenter;
     }];
     
     UIView * contentView = [[[[UIView alloc] initWithFrame:CGRectZero] objectThen:^(UIView * _Nonnull source) {

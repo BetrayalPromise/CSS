@@ -6,18 +6,18 @@
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
-#import "Example10Controller.h"
+#import "CollectionCellLayoutExample0Controller.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
 #import "UIColor+Random.h"
 
-@interface Example10Controller () <UICollectionViewDelegate, UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout>
+@interface CollectionCellLayoutExample0Controller () <UICollectionViewDelegate, UICollectionViewDataSource,  UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NSMutableArray <NSString *> * datas;
 
 @end
 
-@implementation Example10Controller
+@implementation CollectionCellLayoutExample0Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];

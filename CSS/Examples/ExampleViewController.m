@@ -9,6 +9,9 @@
 #import "ExampleViewController.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
+#import "ViewLayoutViewController.h"
+#import "TableCellLayoutViewController.h"
+#import "CollectionCellLayoutViewController.h"
 
 @interface ExampleViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -21,7 +24,9 @@
 - (void)loadView {
     [super loadView];
     
-    _datas = @[@"安全区范围处理", @"标签的抗拉抗压属性处理", @"标签布局例子0", @"标签布局例子1", @"中心", @"cell布局不指定高度", @"cell布局指定高度", @"自定义空间自尺寸", @"标签排列布局", @"FlexShrink", @"UICollectionView"];
+//    _datas = @[@"安全区范围处理", @"标签的抗拉抗压属性处理", @"标签布局例子0", @"标签布局例子1", @"中心", @"cell布局不指定高度", @"cell布局指定高度", @"自定义空间自尺寸", @"标签排列布局", @"FlexShrink", @"UICollectionView"];
+    
+    _datas = @[@"View布局", @"TableCell布局", @"CollectionCell布局"];
 }
 
 - (void)viewDidLoad {
@@ -60,8 +65,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Class className = NSClassFromString([NSString stringWithFormat:@"Example%ldController", (long)indexPath.row]);
-    [self.navigationController pushViewController:[className new] animated:YES];
+    if (indexPath.row == 0) {
+        [self.navigationController pushViewController:[[ViewLayoutViewController alloc] init] animated:YES];
+    } else if (indexPath.row == 1) {
+        [self.navigationController pushViewController:[[TableCellLayoutViewController alloc] init] animated:YES];
+    } else {
+        [self.navigationController pushViewController:[[CollectionCellLayoutViewController alloc] init] animated:YES];
+    }
 }
 
 @end

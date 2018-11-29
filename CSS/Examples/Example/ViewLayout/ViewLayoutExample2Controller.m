@@ -5,16 +5,16 @@
 //  Created by LiChunYang on 15/8/2018.
 //
 
-#import "Example2Controller.h"
+#import "ViewLayoutExample2Controller.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
 #import "UIColor+Random.h"
 
-@interface Example2Controller ()
+@interface ViewLayoutExample2Controller ()
 
 @end
 
-@implementation Example2Controller
+@implementation ViewLayoutExample2Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];

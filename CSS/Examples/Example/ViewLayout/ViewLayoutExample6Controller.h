@@ -1,8 +1,8 @@
 //
-//  CellLayoutViewController.h
+//  Example8Controller.h
 //  CSS
 //
-//  Created by mac on 2018/11/29.
+//  Created by 李阳 on 27/11/2018.
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CellLayoutViewController : UIViewController
+@interface ViewLayoutExample6Controller : UIViewController
 
 @end
 

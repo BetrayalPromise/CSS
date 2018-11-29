@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0408BB9521AB9D8400C9050C /* Example3Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408BB9421AB9D8400C9050C /* Example3Controller.m */; };
-		04540A3521AE9251004CC8B2 /* Example10Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04540A3421AE9251004CC8B2 /* Example10Controller.m */; };
-		048763F321AF999900658C67 /* Example11Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 048763F221AF999900658C67 /* Example11Controller.m */; };
-		048763F821AF9BC500658C67 /* CellLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048763F721AF9BC500658C67 /* CellLayoutViewController.m */; };
+		0408BB9521AB9D8400C9050C /* ViewLayoutExample3Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0408BB9421AB9D8400C9050C /* ViewLayoutExample3Controller.m */; };
+		04540A3521AE9251004CC8B2 /* CollectionCellLayoutExample0Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04540A3421AE9251004CC8B2 /* CollectionCellLayoutExample0Controller.m */; };
+		048763F821AF9BC500658C67 /* TableCellLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048763F721AF9BC500658C67 /* TableCellLayoutViewController.m */; };
 		048763FB21AF9BDD00658C67 /* ViewLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048763FA21AF9BDD00658C67 /* ViewLayoutViewController.m */; };
-		04B4121721AD0B9800061FD2 /* Example4Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4121621AD0B9800061FD2 /* Example4Controller.m */; };
-		04B4121A21AD41DA00061FD2 /* Example7Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4121921AD41DA00061FD2 /* Example7Controller.m */; };
-		04B4122321AE2A0000061FD2 /* Example9Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4122221AE2A0000061FD2 /* Example9Controller.m */; };
-		04CB2D07218BEDE10034F057 /* Example5Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CB2D06218BEDE10034F057 /* Example5Controller.m */; };
-		04FE4439218AFFA300FCC692 /* Example6Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FE4438218AFFA300FCC692 /* Example6Controller.m */; };
+		048763FE21AFAFF900658C67 /* CollectionCellLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048763FD21AFAFF900658C67 /* CollectionCellLayoutViewController.m */; };
+		04B4121721AD0B9800061FD2 /* ViewLayoutExample4Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4121621AD0B9800061FD2 /* ViewLayoutExample4Controller.m */; };
+		04B4121A21AD41DA00061FD2 /* ViewLayoutExample5Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4121921AD41DA00061FD2 /* ViewLayoutExample5Controller.m */; };
+		04B4122321AE2A0000061FD2 /* ViewLayoutExample7Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4122221AE2A0000061FD2 /* ViewLayoutExample7Controller.m */; };
+		04CB2D07218BEDE10034F057 /* TableCellLayoutExample0Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CB2D06218BEDE10034F057 /* TableCellLayoutExample0Controller.m */; };
+		04FE4439218AFFA300FCC692 /* TableCellLayoutExample1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FE4438218AFFA300FCC692 /* TableCellLayoutExample1Controller.m */; };
 		11120C5420D24C3F00D39DD4 /* FlexContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11120C5320D24C3F00D39DD4 /* FlexContainerViewController.m */; };
 		11120C5720D24C5200D39DD4 /* FlexItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11120C5620D24C5200D39DD4 /* FlexItemViewController.m */; };
 		11120C5A20D24D6000D39DD4 /* FlexDirectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11120C5920D24D6000D39DD4 /* FlexDirectionViewController.m */; };
@@ -25,42 +25,42 @@
 		11120C6720D27A5300D39DD4 /* JustifyContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11120C6620D27A5300D39DD4 /* JustifyContentViewController.m */; };
 		11120C9320D2AA1E00D39DD4 /* AlignContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11120C9220D2AA1E00D39DD4 /* AlignContentViewController.m */; };
 		11542E862124310E00BAAB89 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11542E852124310E00BAAB89 /* ExampleViewController.m */; };
-		11542E8A212435AB00BAAB89 /* Example1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 11542E89212435AB00BAAB89 /* Example1Controller.m */; };
-		11542E8D212435D600BAAB89 /* Example2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 11542E8C212435D500BAAB89 /* Example2Controller.m */; };
+		11542E8A212435AB00BAAB89 /* ViewLayoutExample0Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 11542E89212435AB00BAAB89 /* ViewLayoutExample0Controller.m */; };
+		11542E8D212435D600BAAB89 /* ViewLayoutExample2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 11542E8C212435D500BAAB89 /* ViewLayoutExample2Controller.m */; };
 		11641F2720D2C181003DF2A6 /* FlexGrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11641F2620D2C181003DF2A6 /* FlexGrowViewController.m */; };
 		11641F2B20D2C868003DF2A6 /* FlexShrinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11641F2A20D2C868003DF2A6 /* FlexShrinkViewController.m */; };
-		116E31DD211054110094D986 /* Example0Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 116E31DC211054110094D986 /* Example0Controller.m */; };
+		116E31DD211054110094D986 /* ViewLayoutExample1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 116E31DC211054110094D986 /* ViewLayoutExample1Controller.m */; };
 		118631E520BE4E5700C75431 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 118631E420BE4E5700C75431 /* AppDelegate.m */; };
 		118631E820BE4E5700C75431 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118631E720BE4E5700C75431 /* ViewController.m */; };
 		118631ED20BE4E5800C75431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 118631EC20BE4E5800C75431 /* Assets.xcassets */; };
 		118631F020BE4E5800C75431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118631EE20BE4E5800C75431 /* LaunchScreen.storyboard */; };
 		118631F320BE4E5800C75431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 118631F220BE4E5800C75431 /* main.m */; };
 		118631FE20BFE21800C75431 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118631FD20BFE21800C75431 /* CFNetwork.framework */; };
-		6FA7A83221AD7B4F008DB340 /* Example8Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA7A83121AD7B4F008DB340 /* Example8Controller.m */; };
+		6FA7A83221AD7B4F008DB340 /* ViewLayoutExample6Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA7A83121AD7B4F008DB340 /* ViewLayoutExample6Controller.m */; };
 		B892AED70504B7C67F2819FF /* Pods_CSS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E35AC8A68FE56231E5BA8E /* Pods_CSS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0408BB9321AB9D8400C9050C /* Example3Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example3Controller.h; sourceTree = "<group>"; };
-		0408BB9421AB9D8400C9050C /* Example3Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example3Controller.m; sourceTree = "<group>"; };
-		04540A3321AE9251004CC8B2 /* Example10Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example10Controller.h; sourceTree = "<group>"; };
-		04540A3421AE9251004CC8B2 /* Example10Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example10Controller.m; sourceTree = "<group>"; };
-		048763F121AF999900658C67 /* Example11Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example11Controller.h; sourceTree = "<group>"; };
-		048763F221AF999900658C67 /* Example11Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example11Controller.m; sourceTree = "<group>"; };
-		048763F621AF9BC500658C67 /* CellLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellLayoutViewController.h; sourceTree = "<group>"; };
-		048763F721AF9BC500658C67 /* CellLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellLayoutViewController.m; sourceTree = "<group>"; };
+		0408BB9321AB9D8400C9050C /* ViewLayoutExample3Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewLayoutExample3Controller.h; sourceTree = "<group>"; };
+		0408BB9421AB9D8400C9050C /* ViewLayoutExample3Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewLayoutExample3Controller.m; sourceTree = "<group>"; };
+		04540A3321AE9251004CC8B2 /* CollectionCellLayoutExample0Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionCellLayoutExample0Controller.h; sourceTree = "<group>"; };
+		04540A3421AE9251004CC8B2 /* CollectionCellLayoutExample0Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionCellLayoutExample0Controller.m; sourceTree = "<group>"; };
+		048763F621AF9BC500658C67 /* TableCellLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableCellLayoutViewController.h; sourceTree = "<group>"; };
+		048763F721AF9BC500658C67 /* TableCellLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableCellLayoutViewController.m; sourceTree = "<group>"; };
 		048763F921AF9BDD00658C67 /* ViewLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewLayoutViewController.h; sourceTree = "<group>"; };
 		048763FA21AF9BDD00658C67 /* ViewLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewLayoutViewController.m; sourceTree = "<group>"; };
-		04B4121521AD0B9800061FD2 /* Example4Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example4Controller.h; sourceTree = "<group>"; };
-		04B4121621AD0B9800061FD2 /* Example4Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example4Controller.m; sourceTree = "<group>"; };
-		04B4121821AD41DA00061FD2 /* Example7Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example7Controller.h; sourceTree = "<group>"; };
-		04B4121921AD41DA00061FD2 /* Example7Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example7Controller.m; sourceTree = "<group>"; };
-		04B4122121AE2A0000061FD2 /* Example9Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example9Controller.h; sourceTree = "<group>"; };
-		04B4122221AE2A0000061FD2 /* Example9Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example9Controller.m; sourceTree = "<group>"; };
-		04CB2D05218BEDE10034F057 /* Example5Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example5Controller.h; sourceTree = "<group>"; };
-		04CB2D06218BEDE10034F057 /* Example5Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example5Controller.m; sourceTree = "<group>"; };
-		04FE4437218AFFA300FCC692 /* Example6Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example6Controller.h; sourceTree = "<group>"; };
-		04FE4438218AFFA300FCC692 /* Example6Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example6Controller.m; sourceTree = "<group>"; };
+		048763FC21AFAFF900658C67 /* CollectionCellLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionCellLayoutViewController.h; sourceTree = "<group>"; };
+		048763FD21AFAFF900658C67 /* CollectionCellLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionCellLayoutViewController.m; sourceTree = "<group>"; };
+		04B4121521AD0B9800061FD2 /* ViewLayoutExample4Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewLayoutExample4Controller.h; sourceTree = "<group>"; };
+		04B4121621AD0B9800061FD2 /* ViewLayoutExample4Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewLayoutExample4Controller.m; sourceTree = "<group>"; };
+		04B4121821AD41DA00061FD2 /* ViewLayoutExample5Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewLayoutExample5Controller.h; sourceTree = "<group>"; };
+		04B4121921AD41DA00061FD2 /* ViewLayoutExample5Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewLayoutExample5Controller.m; sourceTree = "<group>"; };
+		04B4122121AE2A0000061FD2 /* ViewLayoutExample7Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewLayoutExample7Controller.h; sourceTree = "<group>"; };
+		04B4122221AE2A0000061FD2 /* ViewLayoutExample7Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewLayoutExample7Controller.m; sourceTree = "<group>"; };
+		04CB2D05218BEDE10034F057 /* TableCellLayoutExample0Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableCellLayoutExample0Controller.h; sourceTree = "<group>"; };
+		04CB2D06218BEDE10034F057 /* TableCellLayoutExample0Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableCellLayoutExample0Controller.m; sourceTree = "<group>"; };
+		04FE4437218AFFA300FCC692 /* TableCellLayoutExample1Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableCellLayoutExample1Controller.h; sourceTree = "<group>"; };
+		04FE4438218AFFA300FCC692 /* TableCellLayoutExample1Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableCellLayoutExample1Controller.m; sourceTree = "<group>"; };
 		0FB6FC4AF453DD4009FF9733 /* Pods-CSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSS/Pods-CSS.release.xcconfig"; sourceTree = "<group>"; };
 		11120C5220D24C3F00D39DD4 /* FlexContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexContainerViewController.h; sourceTree = "<group>"; };
 		11120C5320D24C3F00D39DD4 /* FlexContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlexContainerViewController.m; sourceTree = "<group>"; };
@@ -78,16 +78,16 @@
 		11120C9220D2AA1E00D39DD4 /* AlignContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlignContentViewController.m; sourceTree = "<group>"; };
 		11542E842124310E00BAAB89 /* ExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleViewController.h; sourceTree = "<group>"; };
 		11542E852124310E00BAAB89 /* ExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleViewController.m; sourceTree = "<group>"; };
-		11542E88212435AB00BAAB89 /* Example1Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example1Controller.h; sourceTree = "<group>"; };
-		11542E89212435AB00BAAB89 /* Example1Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example1Controller.m; sourceTree = "<group>"; };
-		11542E8B212435D500BAAB89 /* Example2Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2Controller.h; sourceTree = "<group>"; };
-		11542E8C212435D500BAAB89 /* Example2Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example2Controller.m; sourceTree = "<group>"; };
+		11542E88212435AB00BAAB89 /* ViewLayoutExample0Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewLayoutExample0Controller.h; sourceTree = "<group>"; };
+		11542E89212435AB00BAAB89 /* ViewLayoutExample0Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewLayoutExample0Controller.m; sourceTree = "<group>"; };
+		11542E8B212435D500BAAB89 /* ViewLayoutExample2Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewLayoutExample2Controller.h; sourceTree = "<group>"; };
+		11542E8C212435D500BAAB89 /* ViewLayoutExample2Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewLayoutExample2Controller.m; sourceTree = "<group>"; };
 		11641F2520D2C181003DF2A6 /* FlexGrowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexGrowViewController.h; sourceTree = "<group>"; };
 		11641F2620D2C181003DF2A6 /* FlexGrowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlexGrowViewController.m; sourceTree = "<group>"; };
 		11641F2920D2C868003DF2A6 /* FlexShrinkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlexShrinkViewController.h; sourceTree = "<group>"; };
 		11641F2A20D2C868003DF2A6 /* FlexShrinkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlexShrinkViewController.m; sourceTree = "<group>"; };
-		116E31DB211054110094D986 /* Example0Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example0Controller.h; sourceTree = "<group>"; };
-		116E31DC211054110094D986 /* Example0Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example0Controller.m; sourceTree = "<group>"; };
+		116E31DB211054110094D986 /* ViewLayoutExample1Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewLayoutExample1Controller.h; sourceTree = "<group>"; };
+		116E31DC211054110094D986 /* ViewLayoutExample1Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewLayoutExample1Controller.m; sourceTree = "<group>"; };
 		118631E020BE4E5700C75431 /* CSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118631E320BE4E5700C75431 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		118631E420BE4E5700C75431 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 		118631F120BE4E5800C75431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		118631F220BE4E5800C75431 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		118631FD20BFE21800C75431 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		6FA7A83021AD7B4F008DB340 /* Example8Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example8Controller.h; sourceTree = "<group>"; };
-		6FA7A83121AD7B4F008DB340 /* Example8Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example8Controller.m; sourceTree = "<group>"; };
+		6FA7A83021AD7B4F008DB340 /* ViewLayoutExample6Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewLayoutExample6Controller.h; sourceTree = "<group>"; };
+		6FA7A83121AD7B4F008DB340 /* ViewLayoutExample6Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewLayoutExample6Controller.m; sourceTree = "<group>"; };
 		B7E35AC8A68FE56231E5BA8E /* Pods_CSS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C398846999F49017D3318485 /* Pods-CSS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSS/Pods-CSS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,39 +120,44 @@
 		048763F421AF99A700658C67 /* ViewLayout */ = {
 			isa = PBXGroup;
 			children = (
-				11542E88212435AB00BAAB89 /* Example1Controller.h */,
-				11542E89212435AB00BAAB89 /* Example1Controller.m */,
-				116E31DB211054110094D986 /* Example0Controller.h */,
-				116E31DC211054110094D986 /* Example0Controller.m */,
-				11542E8B212435D500BAAB89 /* Example2Controller.h */,
-				11542E8C212435D500BAAB89 /* Example2Controller.m */,
-				0408BB9321AB9D8400C9050C /* Example3Controller.h */,
-				0408BB9421AB9D8400C9050C /* Example3Controller.m */,
-				04B4121521AD0B9800061FD2 /* Example4Controller.h */,
-				04B4121621AD0B9800061FD2 /* Example4Controller.m */,
-				04B4121821AD41DA00061FD2 /* Example7Controller.h */,
-				04B4121921AD41DA00061FD2 /* Example7Controller.m */,
-				6FA7A83021AD7B4F008DB340 /* Example8Controller.h */,
-				6FA7A83121AD7B4F008DB340 /* Example8Controller.m */,
-				04B4122121AE2A0000061FD2 /* Example9Controller.h */,
-				04B4122221AE2A0000061FD2 /* Example9Controller.m */,
+				11542E88212435AB00BAAB89 /* ViewLayoutExample0Controller.h */,
+				11542E89212435AB00BAAB89 /* ViewLayoutExample0Controller.m */,
+				116E31DB211054110094D986 /* ViewLayoutExample1Controller.h */,
+				116E31DC211054110094D986 /* ViewLayoutExample1Controller.m */,
+				11542E8B212435D500BAAB89 /* ViewLayoutExample2Controller.h */,
+				11542E8C212435D500BAAB89 /* ViewLayoutExample2Controller.m */,
+				0408BB9321AB9D8400C9050C /* ViewLayoutExample3Controller.h */,
+				0408BB9421AB9D8400C9050C /* ViewLayoutExample3Controller.m */,
+				04B4121521AD0B9800061FD2 /* ViewLayoutExample4Controller.h */,
+				04B4121621AD0B9800061FD2 /* ViewLayoutExample4Controller.m */,
+				04B4121821AD41DA00061FD2 /* ViewLayoutExample5Controller.h */,
+				04B4121921AD41DA00061FD2 /* ViewLayoutExample5Controller.m */,
+				6FA7A83021AD7B4F008DB340 /* ViewLayoutExample6Controller.h */,
+				6FA7A83121AD7B4F008DB340 /* ViewLayoutExample6Controller.m */,
+				04B4122121AE2A0000061FD2 /* ViewLayoutExample7Controller.h */,
+				04B4122221AE2A0000061FD2 /* ViewLayoutExample7Controller.m */,
 			);
 			path = ViewLayout;
 			sourceTree = "<group>";
 		};
-		048763F521AF99F300658C67 /* CellLayout */ = {
+		048763F521AF99F300658C67 /* TableCellLayout */ = {
 			isa = PBXGroup;
 			children = (
-				04CB2D05218BEDE10034F057 /* Example5Controller.h */,
-				04CB2D06218BEDE10034F057 /* Example5Controller.m */,
-				04FE4437218AFFA300FCC692 /* Example6Controller.h */,
-				04FE4438218AFFA300FCC692 /* Example6Controller.m */,
-				04540A3321AE9251004CC8B2 /* Example10Controller.h */,
-				04540A3421AE9251004CC8B2 /* Example10Controller.m */,
-				048763F121AF999900658C67 /* Example11Controller.h */,
-				048763F221AF999900658C67 /* Example11Controller.m */,
+				04CB2D05218BEDE10034F057 /* TableCellLayoutExample0Controller.h */,
+				04CB2D06218BEDE10034F057 /* TableCellLayoutExample0Controller.m */,
+				04FE4437218AFFA300FCC692 /* TableCellLayoutExample1Controller.h */,
+				04FE4438218AFFA300FCC692 /* TableCellLayoutExample1Controller.m */,
 			);
-			path = CellLayout;
+			path = TableCellLayout;
+			sourceTree = "<group>";
+		};
+		048763FF21AFB00900658C67 /* CollectionCellLayout */ = {
+			isa = PBXGroup;
+			children = (
+				04540A3321AE9251004CC8B2 /* CollectionCellLayoutExample0Controller.h */,
+				04540A3421AE9251004CC8B2 /* CollectionCellLayoutExample0Controller.m */,
+			);
+			path = CollectionCellLayout;
 			sourceTree = "<group>";
 		};
 		11120C5020D24BD900D39DD4 /* FlexContainer */ = {
@@ -218,12 +223,15 @@
 		11542E872124319F00BAAB89 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				048763F621AF9BC500658C67 /* CellLayoutViewController.h */,
-				048763F721AF9BC500658C67 /* CellLayoutViewController.m */,
-				048763F521AF99F300658C67 /* CellLayout */,
 				048763F921AF9BDD00658C67 /* ViewLayoutViewController.h */,
 				048763FA21AF9BDD00658C67 /* ViewLayoutViewController.m */,
 				048763F421AF99A700658C67 /* ViewLayout */,
+				048763F621AF9BC500658C67 /* TableCellLayoutViewController.h */,
+				048763F721AF9BC500658C67 /* TableCellLayoutViewController.m */,
+				048763F521AF99F300658C67 /* TableCellLayout */,
+				048763FC21AFAFF900658C67 /* CollectionCellLayoutViewController.h */,
+				048763FD21AFAFF900658C67 /* CollectionCellLayoutViewController.m */,
+				048763FF21AFB00900658C67 /* CollectionCellLayout */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -432,9 +440,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0408BB9521AB9D8400C9050C /* Example3Controller.m in Sources */,
-				04540A3521AE9251004CC8B2 /* Example10Controller.m in Sources */,
-				04B4121721AD0B9800061FD2 /* Example4Controller.m in Sources */,
+				0408BB9521AB9D8400C9050C /* ViewLayoutExample3Controller.m in Sources */,
+				04540A3521AE9251004CC8B2 /* CollectionCellLayoutExample0Controller.m in Sources */,
+				04B4121721AD0B9800061FD2 /* ViewLayoutExample4Controller.m in Sources */,
 				11120C5420D24C3F00D39DD4 /* FlexContainerViewController.m in Sources */,
 				11641F2B20D2C868003DF2A6 /* FlexShrinkViewController.m in Sources */,
 				11542E862124310E00BAAB89 /* ExampleViewController.m in Sources */,
@@ -442,23 +450,23 @@
 				11120C5A20D24D6000D39DD4 /* FlexDirectionViewController.m in Sources */,
 				118631E820BE4E5700C75431 /* ViewController.m in Sources */,
 				11120C6720D27A5300D39DD4 /* JustifyContentViewController.m in Sources */,
-				11542E8D212435D600BAAB89 /* Example2Controller.m in Sources */,
-				116E31DD211054110094D986 /* Example0Controller.m in Sources */,
+				11542E8D212435D600BAAB89 /* ViewLayoutExample2Controller.m in Sources */,
+				116E31DD211054110094D986 /* ViewLayoutExample1Controller.m in Sources */,
 				11120C9320D2AA1E00D39DD4 /* AlignContentViewController.m in Sources */,
 				11120C5720D24C5200D39DD4 /* FlexItemViewController.m in Sources */,
 				11120C5E20D2550400D39DD4 /* UIColor+Random.m in Sources */,
 				11120C6320D2716D00D39DD4 /* FlexWrapViewController.m in Sources */,
-				04B4121A21AD41DA00061FD2 /* Example7Controller.m in Sources */,
-				048763F321AF999900658C67 /* Example11Controller.m in Sources */,
-				11542E8A212435AB00BAAB89 /* Example1Controller.m in Sources */,
-				6FA7A83221AD7B4F008DB340 /* Example8Controller.m in Sources */,
-				048763F821AF9BC500658C67 /* CellLayoutViewController.m in Sources */,
+				04B4121A21AD41DA00061FD2 /* ViewLayoutExample5Controller.m in Sources */,
+				11542E8A212435AB00BAAB89 /* ViewLayoutExample0Controller.m in Sources */,
+				6FA7A83221AD7B4F008DB340 /* ViewLayoutExample6Controller.m in Sources */,
+				048763F821AF9BC500658C67 /* TableCellLayoutViewController.m in Sources */,
 				118631F320BE4E5800C75431 /* main.m in Sources */,
 				048763FB21AF9BDD00658C67 /* ViewLayoutViewController.m in Sources */,
-				04CB2D07218BEDE10034F057 /* Example5Controller.m in Sources */,
+				04CB2D07218BEDE10034F057 /* TableCellLayoutExample0Controller.m in Sources */,
+				048763FE21AFAFF900658C67 /* CollectionCellLayoutViewController.m in Sources */,
 				118631E520BE4E5700C75431 /* AppDelegate.m in Sources */,
-				04FE4439218AFFA300FCC692 /* Example6Controller.m in Sources */,
-				04B4122321AE2A0000061FD2 /* Example9Controller.m in Sources */,
+				04FE4439218AFFA300FCC692 /* TableCellLayoutExample1Controller.m in Sources */,
+				04B4122321AE2A0000061FD2 /* ViewLayoutExample7Controller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

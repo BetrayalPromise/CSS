@@ -1,5 +1,5 @@
 //
-//  Example11Controller.h
+//  CollectionCellLayoutViewController.h
 //  CSS
 //
 //  Created by mac on 2018/11/29.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Example11Controller : UIViewController
+@interface CollectionCellLayoutViewController : UIViewController
 
 @end
 

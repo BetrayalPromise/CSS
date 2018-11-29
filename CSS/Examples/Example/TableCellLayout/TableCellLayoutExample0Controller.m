@@ -6,16 +6,16 @@
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
-#import "Example5Controller.h"
+#import "TableCellLayoutExample0Controller.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
 #import "UIColor+Random.h"
 
-@interface Example5Controller () <UITableViewDelegate, UITableViewDataSource>
+@interface TableCellLayoutExample0Controller () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray <NSString *> * datas;
 @end
 
-@implementation Example5Controller
+@implementation TableCellLayoutExample0Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];

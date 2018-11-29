@@ -1,8 +1,8 @@
 //
-//  Example3ViewController.h
+//  Example9Controller.h
 //  CSS
 //
-//  Created by mac on 2018/11/26.
+//  Created by mac on 2018/11/28.
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Example3Controller : UIViewController
+@interface ViewLayoutExample7Controller : UIViewController
 
 @end
 

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Example6Controller : UIViewController
+@interface TableCellLayoutExample1Controller : UIViewController
 
 @end
 
