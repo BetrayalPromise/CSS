@@ -22,7 +22,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.title = @"居中";
+    self.title = @"居中排布";
     UIEdgeInsets edge = controllerSafeInset(SafeAreaScopeNavigationBar, nil);
     [self.view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;

@@ -23,6 +23,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"更新布局";
     
     UIEdgeInsets edge = controllerSafeInset(SafeAreaScopeNavigationBar, nil);
     [self.view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {

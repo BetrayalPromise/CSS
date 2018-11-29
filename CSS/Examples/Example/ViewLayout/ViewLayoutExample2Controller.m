@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"嵌套层级";
 
     UIEdgeInsets edge = controllerSafeInset(SafeAreaScopeNavigationBar, nil);
     [self.view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
