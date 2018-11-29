@@ -26,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"YogaKit demo";
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {

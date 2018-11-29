@@ -19,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"重写UIView的intrinsicContentSize属性";
 
     self.view.backgroundColor = [UIColor whiteColor];
     

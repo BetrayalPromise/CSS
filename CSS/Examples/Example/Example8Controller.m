@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = @"AutoLayout干瞪眼";
     self.view.backgroundColor = [UIColor whiteColor];
 
     UIEdgeInsets edge = controllerSafeInset(SafeAreaScopeNavigationBar, nil);

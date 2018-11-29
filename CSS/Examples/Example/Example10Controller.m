@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    self.title = @"UICollectionViewCell布局";
     _datas = [NSMutableArray array];
     for (NSInteger i = 0; i < 10; i ++) {
         [_datas addObject:[[self textForShow] substringWithRange:NSMakeRange(0, arc4random() % ([self textForShow].length - 1))]];
