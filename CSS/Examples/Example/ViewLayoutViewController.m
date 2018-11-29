@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _datas = @[@"抗拉抗压", @"安全区", @"嵌套层级", @"包裹布局", @"居中排布", @"自尺寸", @"流式布局", @"布局更新"];
+    _datas = @[@"抗拉抗压", @"安全区", @"嵌套层级", @"包裹布局", @"居中排布", @"自尺寸", @"流式布局", @"布局更新", @"富文本处理"];
     
     UIEdgeInsets edge = controllerSafeInset(SafeAreaScopeNavigationBar, nil);
     [self.view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {

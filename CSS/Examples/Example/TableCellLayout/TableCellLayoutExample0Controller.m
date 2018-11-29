@@ -110,8 +110,8 @@
 }
 
 - (void)layoutSubviews {
-    [self.contentView.yoga applyLayoutPreservingOrigin:YES dimensionFlexibility:(YGDimensionFlexibilityFlexibleHeight)];
     [super layoutSubviews];
+    [self.contentView.yoga applyLayoutPreservingOrigin:YES dimensionFlexibility:(YGDimensionFlexibilityFlexibleHeight)];
 }
 
 @end
@@ -122,7 +122,7 @@
     Custom0Cell *cell = [self dequeueReusableCellWithIdentifier:identifier];
     [cell prepareForReuse];
     [cell configure:model];
-    CGFloat height = cell.contentView.yoga.intrinsicSize.height;
+    CGFloat height = cell.contentView.yoga.intrinsicSize.height + 0.5;
     return height;
 }
 
