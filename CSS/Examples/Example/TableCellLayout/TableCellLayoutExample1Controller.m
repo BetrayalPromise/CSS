@@ -103,14 +103,12 @@
 
 - (void)configure:(NSString *)text {
     _label.text = text;
-    [_label sizeToFit];
     [_label.yoga markDirty];
 }
 
 - (void)layoutSubviews {
-//    [super layoutSubviews];
-    [self.contentView.yoga applyLayoutPreservingOrigin:YES dimensionFlexibility:(YGDimensionFlexibilityFlexibleHeight)];
     [super layoutSubviews];
+    [self.contentView.yoga applyLayoutPreservingOrigin:YES dimensionFlexibility:(YGDimensionFlexibilityFlexibleHeight)];
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
