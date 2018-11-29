@@ -87,7 +87,7 @@
 }
 
 - (void)createUserInterface {
-    UILabel * textLabel = [[[UILabel alloc] initWithFrame:CGRectZero] objectThen:^(__kindof UILabel * _Nonnull source) {
+    [[[UILabel alloc] initWithFrame:CGRectZero] objectThen:^(__kindof UILabel * _Nonnull source) {
         source.backgroundColor = [UIColor randomColor];
         source.numberOfLines = 0;
         self->_textLabel = source;

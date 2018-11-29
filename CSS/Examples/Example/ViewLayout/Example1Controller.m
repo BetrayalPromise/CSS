@@ -63,7 +63,6 @@
     [b configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
         layout.maxWidth = YGPercentValue(90);
-//        layout.height = YGValueAuto;
         layout.height = YGPointValue(a.yoga.intrinsicSize.height);
     }];
     [self.view.yoga applyLayoutPreservingOrigin:YES];
