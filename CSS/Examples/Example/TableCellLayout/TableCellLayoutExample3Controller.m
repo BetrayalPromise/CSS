@@ -1,23 +1,23 @@
 //
-//  TableCellLayoutExample2Controller.m
+//  TableCellLayoutExample3Controller.m
 //  CSS
 //
 //  Created by mac on 2018/11/29.
 //  Copyright © 2018 com.qmtv. All rights reserved.
 //
 
-#import "TableCellLayoutExample2Controller.h"
+#import "TableCellLayoutExample3Controller.h"
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
 #import "UIColor+Random.h"
 
-@interface TableCellLayoutExample2Controller () <UITableViewDataSource, UITableViewDelegate>
+@interface TableCellLayoutExample3Controller () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSMutableArray <NSString *> * datas;
+@property (nonatomic, strong) NSMutableArray * datas;
 
 @end
 
-@implementation TableCellLayoutExample2Controller
+@implementation TableCellLayoutExample3Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,7 +39,7 @@
     showTableView.delegate = self;
     showTableView.dataSource = self;
     showTableView.rowHeight = UITableViewAutomaticDimension;
-    [showTableView registerReuseCellClass:[Custom2Cell class]];
+    [showTableView registerReuseCellClass:[Custom3Cell class]];
     [showTableView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
         layout.flexGrow = 1.0;
@@ -52,7 +52,7 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    Custom2Cell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([Custom2Cell class])];
+    Custom3Cell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([Custom3Cell class])];
     [cell configure:_datas[indexPath.row]];
     return cell;
 }
@@ -63,7 +63,7 @@
 
 @end
 
-@implementation Custom2Cell
+@implementation Custom3Cell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -75,22 +75,53 @@
 
 - (void)createUserInterface {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    UILabel * label = [[[UILabel alloc] initWithFrame:CGRectZero] objectThen:^(__kindof UILabel * _Nonnull source) {
+    UIImageView * headerImageView = [[[UIImageView alloc] initWithFrame:CGRectZero] objectThen:^(__kindof UIImageView * _Nonnull source) {
         source.backgroundColor = [UIColor randomColor];
-        self->_label = source;
-        source.numberOfLines = 0;
     } attachTo:self.contentView];
+    
+    UIView * rightView = [[[UIView alloc] initWithFrame:CGRectZero] objectThen:^(__kindof UIView * _Nonnull source) {
+        source.backgroundColor = [UIColor randomColor];
+    } attachTo:self.contentView];
+    
+    self.label0 = [[[UILabel alloc] initWithFrame:CGRectZero] objectThen:^(__kindof UILabel * _Nonnull source) {
+        source.backgroundColor = [UIColor randomColor];
+        source.numberOfLines = 0;
+    } attachTo:rightView];
+    
+    self.label1 = [[[UILabel alloc] initWithFrame:CGRectZero] objectThen:^(__kindof UILabel * _Nonnull source) {
+        source.backgroundColor = [UIColor randomColor];
+        source.numberOfLines = 0;
+    } attachTo:rightView];
     
     [self.contentView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
         layout.flexWrap = YGWrapWrap;
         layout.padding = YGPointValue(5);
+        layout.flexDirection = YGFlexDirectionRow;
+        layout.flexWrap = YGWrapNoWrap;
     }];
-    [label configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+    
+    [headerImageView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
-        layout.flexGrow = 1.0;
-        layout.flexShrink = 1.0;
+        layout.width = YGPointValue(80);
+        layout.height = YGPointValue(80);
     }];
+    
+    [rightView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.flexWrap = YGWrapWrap;
+        layout.flexShrink = 1.0;
+        layout.flexGrow = 1.0;
+        layout.flexDirection = YGFlexDirectionColumn;
+    }];
+    
+    [self.label0 configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+    }];
+    [self.label1 configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+    }];
+    [self.contentView.yoga applyLayoutPreservingOrigin:YES];
 }
 
 - (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize withHorizontalFittingPriority:(UILayoutPriority)horizontalFittingPriority verticalFittingPriority:(UILayoutPriority)verticalFittingPriority {
@@ -105,8 +136,17 @@
 }
 
 - (void)configure:(id)model {
-    _label.text = model;
-    [_label.yoga markDirty];
+    self.label0.text = model;
+    [self.label0.yoga markDirty];
+    
+    if (arc4random() % 2 == 0) {
+        self.label1.yoga.display = YGDisplayFlex;
+        self.label1.text = model;
+        [self.label1.yoga markDirty];
+    } else {
+        self.label1.yoga.display = YGDisplayNone;
+    }
+    
 }
 
 @end

@@ -80,6 +80,7 @@
 }
 
 - (void)createUserInterface {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     UILabel * label = [[[[UILabel alloc] initWithFrame:CGRectZero] objectThen:^(UILabel *_Nonnull source) {
         source.backgroundColor = UIColor.randomColor;
         self->_label = source;
