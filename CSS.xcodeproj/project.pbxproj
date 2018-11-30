@@ -17,6 +17,7 @@
 		0487640B21AFCC6C00658C67 /* ViewLayoutExample8Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487640A21AFCC6C00658C67 /* ViewLayoutExample8Controller.m */; };
 		0487640E21AFE27900658C67 /* TableCellLayoutExample3Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487640D21AFE27900658C67 /* TableCellLayoutExample3Controller.m */; };
 		0487641121AFEF4300658C67 /* ViewLayoutExample9Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487641021AFEF4200658C67 /* ViewLayoutExample9Controller.m */; };
+		0487643621B0EEC400658C67 /* TableCellLayoutExample4Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487643521B0EEC400658C67 /* TableCellLayoutExample4Controller.m */; };
 		04B4121721AD0B9800061FD2 /* ViewLayoutExample4Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4121621AD0B9800061FD2 /* ViewLayoutExample4Controller.m */; };
 		04B4121A21AD41DA00061FD2 /* ViewLayoutExample5Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4121921AD41DA00061FD2 /* ViewLayoutExample5Controller.m */; };
 		04B4122321AE2A0000061FD2 /* ViewLayoutExample7Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B4122221AE2A0000061FD2 /* ViewLayoutExample7Controller.m */; };
@@ -66,6 +67,8 @@
 		0487640D21AFE27900658C67 /* TableCellLayoutExample3Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableCellLayoutExample3Controller.m; sourceTree = "<group>"; };
 		0487640F21AFEF4200658C67 /* ViewLayoutExample9Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewLayoutExample9Controller.h; sourceTree = "<group>"; };
 		0487641021AFEF4200658C67 /* ViewLayoutExample9Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewLayoutExample9Controller.m; sourceTree = "<group>"; };
+		0487643421B0EEC400658C67 /* TableCellLayoutExample4Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableCellLayoutExample4Controller.h; sourceTree = "<group>"; };
+		0487643521B0EEC400658C67 /* TableCellLayoutExample4Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableCellLayoutExample4Controller.m; sourceTree = "<group>"; };
 		04B4121521AD0B9800061FD2 /* ViewLayoutExample4Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewLayoutExample4Controller.h; sourceTree = "<group>"; };
 		04B4121621AD0B9800061FD2 /* ViewLayoutExample4Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewLayoutExample4Controller.m; sourceTree = "<group>"; };
 		04B4121821AD41DA00061FD2 /* ViewLayoutExample5Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewLayoutExample5Controller.h; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				0487640421AFB7FE00658C67 /* TableCellLayoutExample2Controller.m */,
 				0487640C21AFE27900658C67 /* TableCellLayoutExample3Controller.h */,
 				0487640D21AFE27900658C67 /* TableCellLayoutExample3Controller.m */,
+				0487643421B0EEC400658C67 /* TableCellLayoutExample4Controller.h */,
+				0487643521B0EEC400658C67 /* TableCellLayoutExample4Controller.m */,
 			);
 			path = TableCellLayout;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 				0487640821AFC9AC00658C67 /* UILabel+EffectSize.m in Sources */,
 				11120C5A20D24D6000D39DD4 /* FlexDirectionViewController.m in Sources */,
 				118631E820BE4E5700C75431 /* ViewController.m in Sources */,
+				0487643621B0EEC400658C67 /* TableCellLayoutExample4Controller.m in Sources */,
 				0487640B21AFCC6C00658C67 /* ViewLayoutExample8Controller.m in Sources */,
 				11120C6720D27A5300D39DD4 /* JustifyContentViewController.m in Sources */,
 				11542E8D212435D600BAAB89 /* ViewLayoutExample2Controller.m in Sources */,

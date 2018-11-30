@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _datas = @[@"Cell高度处理第1种方式", @"Cell高度处理第2种方式", @"Cell高度处理第3种方式", @"Cell常规聊天布局"];
+    _datas = @[@"Cell高度处理第1种方式", @"Cell高度处理第2种方式", @"Cell高度处理第3种方式", @"Cell常规聊天布局", @"Cell高度固定"];
     
     
     UIEdgeInsets edge = controllerSafeInset(SafeAreaScopeNavigationBar, nil);
