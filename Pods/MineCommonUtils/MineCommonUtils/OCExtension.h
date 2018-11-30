@@ -52,3 +52,27 @@ void blockCleanUp(__strong void (^ *block)(void));
 #define Range$(val) [NSValue valueWithRange:(val)]
 #define Rect$(val) [NSValue valueWithRect:(val)]
 #define Size$(val) [NSValue valueWithSize:(val)]
+
+#ifndef weak
+#if __has_feature(objc_arc)
+
+#define weak( x ) autoreleasepool{} __weak __typeof__(x) __weak_##x##__ = x;
+
+#else
+
+#define weak( x ) autoreleasepool{} __block __typeof__(x) __block_##x##__ = x;
+
+#endif
+#endif
+
+#ifndef strong
+#if __has_feature(objc_arc)
+
+#define strong( x ) try{} @finally{} __typeof__(x) x = __weak_##x##__;
+
+#else
+
+#define strong( x ) try{} @finally{} __typeof__(x) x = __block_##x##__;
+
+#endif
+#endif

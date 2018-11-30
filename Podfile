@@ -9,5 +9,4 @@ target 'CSS' do
     pod 'WatchdogInspector'
     pod 'Reveal-SDK', '~> 18'
     pod 'MJRefresh'
-    pod 'libextobjc'
 end

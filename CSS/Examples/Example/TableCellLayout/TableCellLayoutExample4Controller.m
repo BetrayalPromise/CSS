@@ -11,7 +11,6 @@
 #import <YogaKit/UIView+Yoga.h>
 #import "UIColor+Random.h"
 #import <MJRefresh/MJRefresh.h>
-#import <libextobjc/extobjc.h>
 
 @interface TableCellLayoutExample4Controller () <UITableViewDelegate, UITableViewDataSource>
 
@@ -49,9 +48,11 @@
     }];
     [self.view.yoga applyLayoutPreservingOrigin:YES];
     
-    @weakify(self, showTableView);
+    @weak(self);
+    @weak(showTableView);
     showTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        @strongify(self, showTableView);
+        @strong(self);
+        @strong(showTableView);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.datas removeAllObjects];
             for (NSInteger i = 0; i < 5; i ++) {
@@ -63,7 +64,8 @@
     }];
     
     showTableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
-        @strongify(self, showTableView);
+        @strong(self);
+        @strong(showTableView);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             for (NSInteger i = 0; i < 5; i ++) {
                 [self.datas addObject:[[self textForShow] substringWithRange:NSMakeRange(0, arc4random() % ([self textForShow].length - 1))]];
