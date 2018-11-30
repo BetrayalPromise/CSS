@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9B605E9300CE3F0C052B51BD7B55BD73"
+               BlueprintIdentifier = "2FBDC8DCF56949C456BB0A3EDF492B20"
                BuildableName = "yoga.framework"
                BlueprintName = "Yoga"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9B605E9300CE3F0C052B51BD7B55BD73"
+            BlueprintIdentifier = "2FBDC8DCF56949C456BB0A3EDF492B20"
             BuildableName = "yoga.framework"
             BlueprintName = "Yoga"
             ReferencedContainer = "container:Pods.xcodeproj">

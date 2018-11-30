@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CSS/Examples/Example/TableCellLayout/TableCellLayoutExample4Controller.m"
-            timestampString = "565258057.993636"
+            timestampString = "565259232.724023"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-layoutSubviews"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CSS/Examples/Example/TableCellLayout/TableCellLayoutExample4Controller.m"
-            timestampString = "565258057.994004"
+            timestampString = "565259232.724485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "-configure:"
             landmarkType = "7">
          </BreakpointContent>

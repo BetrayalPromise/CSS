@@ -1,4 +1,39 @@
 PODS:
+  - libextobjc (0.6):
+    - libextobjc/EXTADT (= 0.6)
+    - libextobjc/EXTConcreteProtocol (= 0.6)
+    - libextobjc/EXTKeyPathCoding (= 0.6)
+    - libextobjc/EXTNil (= 0.6)
+    - libextobjc/EXTSafeCategory (= 0.6)
+    - libextobjc/EXTScope (= 0.6)
+    - libextobjc/EXTSelectorChecking (= 0.6)
+    - libextobjc/EXTSynthesize (= 0.6)
+    - "libextobjc/NSInvocation+EXT (= 0.6)"
+    - "libextobjc/NSMethodSignature+EXT (= 0.6)"
+    - libextobjc/RuntimeExtensions (= 0.6)
+    - libextobjc/UmbrellaHeader (= 0.6)
+  - libextobjc/EXTADT (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.6):
+    - libextobjc/RuntimeExtensions
+  - "libextobjc/NSInvocation+EXT (0.6)":
+    - libextobjc/RuntimeExtensions
+  - "libextobjc/NSMethodSignature+EXT (0.6)":
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.6)
+  - libextobjc/UmbrellaHeader (0.6)
   - MineCommonUtils (1.1.7):
     - MineCommonUtils/ColorValue (= 1.1.7)
     - MineCommonUtils/CommonAdaptive (= 1.1.7)
@@ -64,6 +99,7 @@ PODS:
     - Yoga (~> 1.9)
 
 DEPENDENCIES:
+  - libextobjc
   - MineCommonUtils (from `https://github.com/BetrayalPromise/MineCommonUtils.git`)
   - MJRefresh
   - Reveal-SDK (~> 18)
@@ -72,6 +108,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - libextobjc
     - MJRefresh
     - Reveal-SDK
     - RSSwizzle
@@ -89,6 +126,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/BetrayalPromise/MineCommonUtils.git
 
 SPEC CHECKSUMS:
+  libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
   MineCommonUtils: bac9f36ab4c5c980d0d448bf4f05e7aa854d305b
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   Reveal-SDK: cce79388da3fd0bbb6ae19d769b906cfc3a33a89
@@ -97,6 +135,6 @@ SPEC CHECKSUMS:
   Yoga: aaae8abea68951f60bee05f6277d3eed90bb91bb
   YogaKit: d447a9bb808718e6f58e52a2255a8050081a3ead
 
-PODFILE CHECKSUM: 9b07d910410e294dc1e6212ea23a919b2e132a14
+PODFILE CHECKSUM: 33d9290a74b0d4d061df4465e389fd421cc8cf6d
 
 COCOAPODS: 1.5.3

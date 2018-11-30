@@ -10,6 +10,8 @@
 #import <MineCommonUtils/MineCommonUtils.h>
 #import <YogaKit/UIView+Yoga.h>
 #import "UIColor+Random.h"
+#import <MJRefresh/MJRefresh.h>
+#import <libextobjc/extobjc.h>
 
 @interface TableCellLayoutExample4Controller () <UITableViewDelegate, UITableViewDataSource>
 
@@ -29,7 +31,7 @@
     }];
     _datas = [NSMutableArray array];
     
-    for (NSInteger i = 0; i < 50; i ++) {
+    for (NSInteger i = 0; i < 5; i ++) {
         [_datas addObject:[[self textForShow] substringWithRange:NSMakeRange(0, arc4random() % ([self textForShow].length - 1))]];
     }
     
@@ -38,6 +40,7 @@
     [self.view addSubview:showTableView];
     showTableView.delegate = self;
     showTableView.dataSource = self;
+    showTableView.estimatedRowHeight = 0.0;
     showTableView.rowHeight = UITableViewAutomaticDimension;
     [showTableView registerReuseCellClass:[Custom4Cell class]];
     [showTableView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
@@ -45,6 +48,30 @@
         layout.flexGrow = 1.0;
     }];
     [self.view.yoga applyLayoutPreservingOrigin:YES];
+    
+    @weakify(self, showTableView);
+    showTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        @strongify(self, showTableView);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.datas removeAllObjects];
+            for (NSInteger i = 0; i < 5; i ++) {
+                [self.datas addObject:[[self textForShow] substringWithRange:NSMakeRange(0, arc4random() % ([self textForShow].length - 1))]];
+            }
+            [showTableView.mj_header endRefreshing];
+            [showTableView reloadData];
+        });
+    }];
+    
+    showTableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        @strongify(self, showTableView);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            for (NSInteger i = 0; i < 5; i ++) {
+                [self.datas addObject:[[self textForShow] substringWithRange:NSMakeRange(0, arc4random() % ([self textForShow].length - 1))]];
+            }
+            [showTableView.mj_footer endRefreshing];
+            [showTableView reloadData];
+        });
+    }];
 }
 
 - (NSString *)textForShow {
