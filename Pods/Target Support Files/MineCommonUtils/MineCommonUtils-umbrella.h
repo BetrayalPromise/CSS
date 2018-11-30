@@ -11,7 +11,6 @@
 #endif
 
 #import "MineCommonUtils.h"
-#import "NSString+Attribute.h"
 #import "NSString+ColorValue.h"
 #import "CommonAdaptive.h"
 #import "NSObject+DistributeSelector.h"
@@ -25,6 +24,7 @@
 #import "UITableViewCell+IndexPath.h"
 #import "UITableViewHeaderFooterView+IndexPath.h"
 #import "JSONLog.h"
+#import "OCExtension.h"
 #import "NSObject+PerformSelector.h"
 #import "NSObject+Persistent.h"
 #import "FastCoder.h"

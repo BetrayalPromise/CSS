@@ -1,6 +1,6 @@
 {
   "name": "MineCommonUtils",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "summary": "MineCommonUtils.",
   "description": "MineCommonUtils for me",
   "homepage": "https://github.com/BetrayalPromise",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/BetrayalPromise/MineCommonUtils.git",
-    "tag": "1.1.6"
+    "tag": "1.1.7"
   },
   "source_files": "MineCommonUtils/MineCommonUtils.h",
   "public_header_files": "MineCommonUtils/MineCommonUtils.h",
@@ -133,11 +133,6 @@
       "public_header_files": "MineCommonUtils/NSString+ColorValue.h"
     },
     {
-      "name": "Attribute",
-      "source_files": "MineCommonUtils/NSString+Attribute.{h,m}",
-      "public_header_files": "MineCommonUtils/NSString+Attribute.h"
-    },
-    {
       "name": "IndexPath",
       "source_files": "MineCommonUtils/*+IndexPath.{h,m}",
       "public_header_files": "MineCommonUtils/*+IndexPath.h"
@@ -151,6 +146,11 @@
       "name": "JSONLog",
       "source_files": "MineCommonUtils/JSONLog.{h,m}",
       "public_header_files": "MineCommonUtils/JSONLog.h"
+    },
+    {
+      "name": "OCExtension",
+      "source_files": "MineCommonUtils/OCExtension.{h,m}",
+      "public_header_files": "MineCommonUtils/OCExtension.h"
     }
   ]
 }

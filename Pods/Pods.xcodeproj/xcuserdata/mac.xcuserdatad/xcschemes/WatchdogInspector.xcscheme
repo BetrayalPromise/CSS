@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AB92DAE111DC0A630920586258425961"
+               BlueprintIdentifier = "BD6D2AF65F092CFC4C2B83E49727E9A4"
                BuildableName = "WatchdogInspector.framework"
                BlueprintName = "WatchdogInspector"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AB92DAE111DC0A630920586258425961"
+            BlueprintIdentifier = "BD6D2AF65F092CFC4C2B83E49727E9A4"
             BuildableName = "WatchdogInspector.framework"
             BlueprintName = "WatchdogInspector"
             ReferencedContainer = "container:Pods.xcodeproj">

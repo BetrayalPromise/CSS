@@ -29,7 +29,7 @@
     }];
     _datas = [NSMutableArray array];
     
-    for (NSInteger i = 0; i < 500; i ++) {
+    for (NSInteger i = 0; i < 50; i ++) {
         [_datas addObject:[[self textForShow] substringWithRange:NSMakeRange(0, arc4random() % ([self textForShow].length - 1))]];
     }
     
@@ -53,6 +53,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     Custom4Cell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([Custom4Cell class])];
+    [cell configure:_datas[indexPath.row]];
     return cell;
 }
 
@@ -84,9 +85,20 @@
     } attachTo:self.contentView];
     [self.contentView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
-        layout.flexWrap = YGWrapWrap;
+//        layout.flexWrap = YGWrapWrap;
         layout.padding = YGPointValue(5);
+        layout.flexDirection = YGFlexDirectionRow;
     }];
+    
+    UIView * rightView = [[[UIView alloc] initWithFrame:CGRectZero] objectThen:^(__kindof UIView * _Nonnull source) {
+        source.backgroundColor = [UIColor randomColor];
+    } attachTo:self.contentView];
+    
+    UILabel * label = [[[UILabel alloc] initWithFrame:CGRectZero] objectThen:^(__kindof UILabel * _Nonnull source) {
+        source.backgroundColor = [UIColor randomColor];
+        source.numberOfLines = 0;
+        self->_label = source;
+    } attachTo:rightView];
     
     [headerImageView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         layout.isEnabled = YES;
@@ -94,6 +106,26 @@
         layout.height = YGPointValue(80);
     }];
     
+    [rightView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.flexShrink = 1.0;
+    }];
+    
+    [label configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        layout.isEnabled = YES;
+        layout.flexShrink = 1.0;
+    }];
+    
+    [self.contentView.yoga applyLayoutPreservingOrigin:YES];
+}
+
+- (void)configure:(id)model {
+    _label.text = model;
+    [_label.yoga markDirty];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
     [self.contentView.yoga applyLayoutPreservingOrigin:YES];
 }
 

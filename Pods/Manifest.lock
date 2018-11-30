@@ -1,60 +1,61 @@
 PODS:
-  - MineCommonUtils (1.1.6):
-    - MineCommonUtils/Attribute (= 1.1.6)
-    - MineCommonUtils/ColorValue (= 1.1.6)
-    - MineCommonUtils/CommonAdaptive (= 1.1.6)
-    - MineCommonUtils/DistributeSelector (= 1.1.6)
-    - MineCommonUtils/DynamicProperty (= 1.1.6)
-    - MineCommonUtils/FileManager (= 1.1.6)
-    - MineCommonUtils/FunctionOperate (= 1.1.6)
-    - MineCommonUtils/IndexPath (= 1.1.6)
-    - MineCommonUtils/JSONLog (= 1.1.6)
-    - MineCommonUtils/PerformSelector (= 1.1.6)
-    - MineCommonUtils/Persistent (= 1.1.6)
-    - MineCommonUtils/Reuse (= 1.1.6)
-    - MineCommonUtils/Route (= 1.1.6)
-    - MineCommonUtils/Scheduler (= 1.1.6)
-    - MineCommonUtils/SubClasses (= 1.1.6)
-    - MineCommonUtils/TimeConvert (= 1.1.6)
-    - MineCommonUtils/TypeEnsure (= 1.1.6)
-    - MineCommonUtils/ViewUtils (= 1.1.6)
+  - MineCommonUtils (1.1.7):
+    - MineCommonUtils/ColorValue (= 1.1.7)
+    - MineCommonUtils/CommonAdaptive (= 1.1.7)
+    - MineCommonUtils/DistributeSelector (= 1.1.7)
+    - MineCommonUtils/DynamicProperty (= 1.1.7)
+    - MineCommonUtils/FileManager (= 1.1.7)
+    - MineCommonUtils/FunctionOperate (= 1.1.7)
+    - MineCommonUtils/IndexPath (= 1.1.7)
+    - MineCommonUtils/JSONLog (= 1.1.7)
+    - MineCommonUtils/OCExtension (= 1.1.7)
+    - MineCommonUtils/PerformSelector (= 1.1.7)
+    - MineCommonUtils/Persistent (= 1.1.7)
+    - MineCommonUtils/Reuse (= 1.1.7)
+    - MineCommonUtils/Route (= 1.1.7)
+    - MineCommonUtils/Scheduler (= 1.1.7)
+    - MineCommonUtils/SubClasses (= 1.1.7)
+    - MineCommonUtils/TimeConvert (= 1.1.7)
+    - MineCommonUtils/TypeEnsure (= 1.1.7)
+    - MineCommonUtils/ViewUtils (= 1.1.7)
     - RSSwizzle
-  - MineCommonUtils/Attribute (1.1.6):
+  - MineCommonUtils/ColorValue (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/ColorValue (1.1.6):
+  - MineCommonUtils/CommonAdaptive (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/CommonAdaptive (1.1.6):
+  - MineCommonUtils/DistributeSelector (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/DistributeSelector (1.1.6):
+  - MineCommonUtils/DynamicProperty (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/DynamicProperty (1.1.6):
+  - MineCommonUtils/FileManager (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/FileManager (1.1.6):
+  - MineCommonUtils/FunctionOperate (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/FunctionOperate (1.1.6):
+  - MineCommonUtils/IndexPath (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/IndexPath (1.1.6):
+  - MineCommonUtils/JSONLog (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/JSONLog (1.1.6):
+  - MineCommonUtils/OCExtension (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/PerformSelector (1.1.6):
+  - MineCommonUtils/PerformSelector (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/Persistent (1.1.6):
+  - MineCommonUtils/Persistent (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/Reuse (1.1.6):
+  - MineCommonUtils/Reuse (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/Route (1.1.6):
+  - MineCommonUtils/Route (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/Scheduler (1.1.6):
+  - MineCommonUtils/Scheduler (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/SubClasses (1.1.6):
+  - MineCommonUtils/SubClasses (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/TimeConvert (1.1.6):
+  - MineCommonUtils/TimeConvert (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/TypeEnsure (1.1.6):
+  - MineCommonUtils/TypeEnsure (1.1.7):
     - RSSwizzle
-  - MineCommonUtils/ViewUtils (1.1.6):
+  - MineCommonUtils/ViewUtils (1.1.7):
     - RSSwizzle
+  - MJRefresh (3.1.15.7)
   - Reveal-SDK (18)
   - RSSwizzle (0.1.0)
   - WatchdogInspector (1.3.0)
@@ -64,12 +65,14 @@ PODS:
 
 DEPENDENCIES:
   - MineCommonUtils (from `https://github.com/BetrayalPromise/MineCommonUtils.git`)
+  - MJRefresh
   - Reveal-SDK (~> 18)
   - WatchdogInspector
   - YogaKit (~> 1.9.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - MJRefresh
     - Reveal-SDK
     - RSSwizzle
     - WatchdogInspector
@@ -82,17 +85,18 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MineCommonUtils:
-    :commit: a3da4d6ce642c460b79457e4b6ce91601cad5b31
+    :commit: 4f1546bce9eaed3e45b621d55f79f560812fd4f0
     :git: https://github.com/BetrayalPromise/MineCommonUtils.git
 
 SPEC CHECKSUMS:
-  MineCommonUtils: 548846aaf018f3d23d386c519a1caa964cb9a839
+  MineCommonUtils: bac9f36ab4c5c980d0d448bf4f05e7aa854d305b
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   Reveal-SDK: cce79388da3fd0bbb6ae19d769b906cfc3a33a89
   RSSwizzle: d561958f595028bfcef98c7d55c318b3878a61c6
   WatchdogInspector: 439a73b047028a6048a59e56b70fcf11045a6e13
   Yoga: aaae8abea68951f60bee05f6277d3eed90bb91bb
   YogaKit: d447a9bb808718e6f58e52a2255a8050081a3ead
 
-PODFILE CHECKSUM: 7ece8f21f384ad30737b7f88e2e475217d5733f9
+PODFILE CHECKSUM: 9b07d910410e294dc1e6212ea23a919b2e132a14
 
 COCOAPODS: 1.5.3

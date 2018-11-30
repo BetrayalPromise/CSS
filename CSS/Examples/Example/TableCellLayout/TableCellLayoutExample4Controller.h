@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Custom4Cell : UITableViewCell
 
+@property (nonatomic, strong) UILabel * label;
+- (void)configure:(id)model;
+
 @end
 
 NS_ASSUME_NONNULL_END
